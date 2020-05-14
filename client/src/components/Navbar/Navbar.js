@@ -49,7 +49,7 @@ function Navbar() {
     <nav className="navbar navbar-expand navbar-dark bg-primary">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          React JWT App
+          Rendez-view
         </Link>
         <NavLinks />
       </div>
