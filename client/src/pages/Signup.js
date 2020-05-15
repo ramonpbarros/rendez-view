@@ -83,7 +83,7 @@ function Signup() {
               onChange={handleChange}
             />
           </div>
-          <div class="col text-center">
+          <div className="col text-center">
             <button type="submit" className="btn btn-custom zoom mb-3 mt-3">
               Sing Up
             </button>

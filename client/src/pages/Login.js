@@ -60,7 +60,7 @@ function Login() {
               onChange={({ target }) => setPassword(target.value)}
             />
           </div>
-          <div class="col text-center">
+          <div className="col text-center">
             <button type="submit" className="btn btn-custom zoom mb-3 mt-3">
               Login
             </button>
