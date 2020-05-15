@@ -12,52 +12,65 @@ function Login() {
     return <Redirect to="/" />;
   }
 
-  const handleFormSubmit = event => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
 
     login(email, password)
       // navigate to the profile page
       .then(() => history.push("/profile"))
-      .catch(err => {
+      .catch((err) => {
         alert(err.response.data.message);
       });
   };
 
   return (
-    <div className="container">
-      <h1>Login</h1>
-      <form onSubmit={handleFormSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email address:</label>
-          <input
-            className="form-control"
-            placeholder="Email goes here..."
-            name="email"
-            type="email"
-            id="email"
-            value={email}
-            onChange={({ target }) => setEmail(target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            className="form-control"
-            placeholder="Password goes here..."
-            name="password"
-            type="password"
-            id="pwd"
-            value={password}
-            onChange={({ target }) => setPassword(target.value)}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form>
-      <p>
-        <Link to="/signup">Go to Signup</Link>
-      </p>
+    <div className="card">
+      <div className=" card-body container">
+        <h1
+          style={{ textAlign: "center", color: "#f54c4c", fontWeight: "bold" }}
+          className="mb-4 mt-4"
+        >
+          Welcome Back
+        </h1>
+        <p style={{ textAlign: "center", color: "gray" }} className="mb-4">
+          In order to login, please fill out all the fields below.
+        </p>
+        <form onSubmit={handleFormSubmit}>
+          <div className="form-group">
+            {/* <label htmlFor="email">Email address:</label> */}
+            <input
+              className="form-control"
+              placeholder="E-mail"
+              name="email"
+              type="email"
+              id="email"
+              value={email}
+              onChange={({ target }) => setEmail(target.value)}
+            />
+          </div>
+          <div className="form-group">
+            {/* <label htmlFor="pwd">Password:</label> */}
+            <input
+              className="form-control"
+              placeholder="Password"
+              name="password"
+              type="password"
+              id="pwd"
+              value={password}
+              onChange={({ target }) => setPassword(target.value)}
+            />
+          </div>
+          <div class="col text-center">
+            <button type="submit" className="btn btn-custom zoom mb-3 mt-3">
+              Login
+            </button>
+          </div>
+        </form>
+        <p style={{ textAlign: "center" }}>
+          <span style={{ color: "gray" }}>Don't an account? </span>
+          <Link to="/signup" style={{ color: "grey", fontWeight: "bold" }}>Sign Up</Link>
+        </p>
+      </div>
     </div>
   );
 }
