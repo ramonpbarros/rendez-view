@@ -25,10 +25,10 @@
 
 .card {
   width: 500px;
-  height: 550px;
+  height: 450px;
   margin: 0 auto;
   margin-top: 5em;
-  padding-top: 3em;
+  padding-top: 1em;
 }
 
 .btn-custom {
