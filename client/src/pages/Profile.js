@@ -16,61 +16,63 @@ function Profile() {
   }, [user]);
 
   return (
-    <div className="jumbotron" style={{ backgroundColor: "snow" }}>
-      <h1
-        className="display-4"
-        style={{ color: "#f54c4c", fontWeight: "bold" }}
-      >
-        Hello, {username}!
-      </h1>
-      <p className="lead">
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
-      </p>
-      <hr className="my-4" />
-      <p>
-        It uses utility classes for typography and spacing to space content out
-        within the larger container {email}.
-      </p>
-      <div className="col text-center">
-        <div className="btn-group">
-          <button
-            className="btn btn-custom btn-lg dropdown-toggle"
-            type="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            My Plans
-          </button>
-          <div className="dropdown-menu">
-            <button className="dropdown-item" type="button">
-              Plan 1
+    <React.Fragment>
+      <div className="jumbotron" style={{ backgroundColor: "#fff6f5" }}>
+        <h1
+          className="display-4"
+          style={{ color: "#f54c4c", fontWeight: "bold" }}
+        >
+          Hello, {username}!
+        </h1>
+        <p className="lead">
+          This is a simple hero unit, a simple jumbotron-style component for
+          calling extra attention to featured content or information.
+        </p>
+        <hr className="my-4" />
+        <p>
+          It uses utility classes for typography and spacing to space content
+          out within the larger container {email}.
+        </p>
+        <div className="col text-center">
+          <div className="btn-group">
+            <button
+              className="btn btn-custom btn-lg dropdown-toggle"
+              type="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              My Plans
             </button>
-            <button className="dropdown-item" type="button">
-              Plan 2
-            </button>
-            <button className="dropdown-item disabled" type="button">
-              Top rated plans
-            </button>
+            <div className="dropdown-menu">
+              <button className="dropdown-item" type="button">
+                Plan 1
+              </button>
+              <button className="dropdown-item" type="button">
+                Plan 2
+              </button>
+              <button className="dropdown-item disabled" type="button">
+                Top rated plans
+              </button>
+            </div>
           </div>
+          <Link
+            to="/"
+            className="btn btn-custom zoom btn-lg m-4"
+            href="#"
+            role="button"
+          >
+            Random Plan
+          </Link>
+          <Link
+            to="/"
+            className="btn btn-custom zoom btn-lg"
+            href="#"
+            role="button"
+          >
+            Create New Plan
+          </Link>
         </div>
-        <Link
-          to="/"
-          className="btn btn-custom zoom btn-lg m-4"
-          href="#"
-          role="button"
-        >
-          Random Plan
-        </Link>
-        <Link
-          to="/"
-          className="btn btn-custom zoom btn-lg"
-          href="#"
-          role="button"
-        >
-          Create New Plan
-        </Link>
       </div>
       <div class="card-deck mt-5">
         <div className="card bg-dark text-white">
@@ -134,7 +136,7 @@ function Profile() {
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 
