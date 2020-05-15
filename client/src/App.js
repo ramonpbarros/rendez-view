@@ -5,6 +5,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import "./App.css"
 
 // Our Components
 import { AuthProvider, useAuth } from "./utils/auth";
