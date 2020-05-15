@@ -89,7 +89,7 @@ function Profile() {
                   "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
               }}
             >
-              Cocktail Recipes
+              Cocktails
             </h1>
           </div>
         </div>
@@ -109,7 +109,7 @@ function Profile() {
                   "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
               }}
             >
-              Food Recipes
+              Meals
             </h1>
           </div>
         </div>
