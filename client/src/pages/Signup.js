@@ -38,7 +38,10 @@ function Signup() {
   };
 
   return (
-    <div className="card">
+    <div
+      className="card"
+      style={{ width: 500, height: 450, marginTop: "5em", paddingTop: "1em" }}
+    >
       <div className=" card-body container">
         <h1
           style={{ textAlign: "center", color: "#f54c4c", fontWeight: "bold" }}

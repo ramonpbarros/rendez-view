@@ -30,7 +30,7 @@ function Profile() {
       <hr className="my-4" />
       <p>
         It uses utility classes for typography and spacing to space content out
-        within the larger container.
+        within the larger container {email}.
       </p>
       <div className="col text-center">
         <div className="btn-group">
@@ -45,10 +45,10 @@ function Profile() {
           </button>
           <div className="dropdown-menu">
             <button className="dropdown-item" type="button">
-              Action
+              Plan 1
             </button>
             <button className="dropdown-item" type="button">
-              Another action
+              Plan 2
             </button>
             <button className="dropdown-item disabled" type="button">
               Top rated plans
@@ -72,11 +72,67 @@ function Profile() {
           Create New Plan
         </Link>
       </div>
-      <div className="container Profile">
-        <h1>On the profile page!</h1>
-        <p>Username: {username}</p>
-        <p>Email: {email}</p>
-        <Link to="/">Go home</Link>
+      <div class="card-deck mt-5">
+        <div className="card bg-dark text-white">
+          <img
+            src="https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+            className="card-img"
+            alt="..."
+          />
+          <div className="card-img-overlay">
+            <h1
+              className="card-title mt-5"
+              style={{
+                textAlign: "center",
+                fontWeight: "bold",
+                textShadow:
+                  "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+              }}
+            >
+              Cocktail Recipes
+            </h1>
+          </div>
+        </div>
+        <div className="card bg-dark text-white">
+          <img
+            src="https://images.unsplash.com/photo-1533777324565-a040eb52facd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+            className="card-img"
+            alt="..."
+          />
+          <div className="card-img-overlay">
+            <h1
+              className="card-title mt-5"
+              style={{
+                textAlign: "center",
+                fontWeight: "bold",
+                textShadow:
+                  "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+              }}
+            >
+              Food Recipes
+            </h1>
+          </div>
+        </div>
+        <div className="card bg-dark text-white">
+          <img
+            src="https://images.unsplash.com/photo-1572188863110-46d457c9234d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+            className="card-img"
+            alt="..."
+          />
+          <div className="card-img-overlay">
+            <h1
+              className="card-title mt-5"
+              style={{
+                textAlign: "center",
+                fontWeight: "bold",
+                textShadow:
+                  "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+              }}
+            >
+              Movies
+            </h1>
+          </div>
+        </div>
       </div>
     </div>
   );
