@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import API from "./../utils/API";
+import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { useAuth } from "../utils/auth";
 
@@ -9,18 +9,36 @@ function Profile() {
   const { user } = useAuth();
 
   useEffect(() => {
-    API.getUser(user.id).then(res => {
+    API.getUser(user.id).then((res) => {
       setUsername(res.data.username);
       setEmail(res.data.email);
     });
   }, [user]);
 
   return (
-    <div className="container Profile">
-      <h1>On the profile page!</h1>
-      <p>Username: {username}</p>
-      <p>Email: {email}</p>
-      <Link to="/">Go home</Link>
+    <div className="jumbotron" style={{backgroundColor: "snow"}}>
+      <h1 className="display-4" style={{color: "#f54c4c", fontWeight: "bold"}}>Hello, {username}!</h1>
+      <p className="lead">
+        This is a simple hero unit, a simple jumbotron-style component for
+        calling extra attention to featured content or information.
+      </p>
+      <hr className="my-4" />
+      <p>
+        It uses utility classes for typography and spacing to space content out
+        within the larger container.
+      </p>
+      <Link to="/" className="btn btn-custom zoom btn-lg m-3" href="#" role="button">
+        Random Plan
+      </Link>
+      <Link to="/" className="btn btn-custom zoom btn-lg" href="#" role="button">
+        Create New Plan
+      </Link>
+      <div className="container Profile">
+        <h1>On the profile page!</h1>
+        <p>Username: {username}</p>
+        <p>Email: {email}</p>
+        <Link to="/">Go home</Link>
+      </div>
     </div>
   );
 }
