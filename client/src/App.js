@@ -15,6 +15,8 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Homepage from "./pages/Homepage";
+import FoodCategory from "./pages/FoodCategory";
+import CocktailCategory from "./pages/CocktailCategory";
 
 function ProtectedRoute({ children, ...rest }) {
   const { isLoggedIn } = useAuth();
@@ -48,6 +50,14 @@ function App() {
             <ProtectedRoute exact path="/profile">
               <Navbar />
               <Profile />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/foodcategory">
+              <Navbar />
+              <FoodCategory />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/cocktailcategory">
+              <Navbar />
+              <CocktailCategory />
             </ProtectedRoute>
           </Switch>
         </div>
