@@ -47,6 +47,7 @@
   -khtml-box-shadow: 1px 1px 1px rgb(30, 30, 30) 30;
 }
 
+/* Animate btns */
 .zoom {
   transition: transform 0.2s;
 }
@@ -54,6 +55,8 @@
 .zoom:hover {
   transform: scale(1.03);
 }
+
+/* Animate links on profile.js */
 .zoom1 {
   transition: transform 0.3s;
   z-index: 3;
