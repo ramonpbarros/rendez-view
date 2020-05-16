@@ -5,7 +5,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import "./App.css"
+import "./App.css";
 
 // Our Components
 import { AuthProvider, useAuth } from "./utils/auth";
@@ -14,6 +14,8 @@ import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import FoodCatgory from "./pages/FoodCategory";
+import CocktailCatgory from "./pages/CocktailCategory";
 
 function ProtectedRoute({ children, ...rest }) {
   const { isLoggedIn } = useAuth();
@@ -42,6 +44,8 @@ function App() {
             <ProtectedRoute exact path="/profile">
               <Profile />
             </ProtectedRoute>
+            <FoodCatgory exact path="/foodcategory"></FoodCatgory>
+            <CocktailCatgory exact path="/cocktailcategory"></CocktailCatgory>
           </Switch>
         </div>
       </Router>
