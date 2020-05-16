@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
+import APIC from "../utils/API/Cocktail";
 import { Link } from "react-router-dom";
 import { useAuth } from "../utils/auth";
 import Jumbotron from "../components/Jumbotron";
 
 function Profile() {
+  const [randomDrink, setRandomDrink] = useState([]);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const { user } = useAuth();
@@ -16,8 +18,25 @@ function Profile() {
     });
   }, [user]);
 
+  useEffect(() => {
+    APIC.getRandom().then((res) => {
+      console.log(res.data.drinks);
+      setRandomDrink(
+        res.data.drinks.map((res) => ({
+          id: res.idDrink,
+          name: res.strDrink,
+          image: res.strDrinkThumb
+        }))
+      );
+    });  
+  }, []);
+
   return (
     <React.Fragment>
+      {randomDrink.map((item)=>{
+        console.log(item.name)
+        return <h1 key={item.id}>{item.name}</h1>
+      })}
       <Jumbotron username={username} email={email} />
       <div className="container px-lg-5">
         <div className="row mx-lg-n5">
