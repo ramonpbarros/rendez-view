@@ -38,7 +38,10 @@ function Signup() {
   };
 
   return (
-    <div className="card">
+    <div
+      className="card"
+      style={{ width: 500, height: 450, marginTop: "5em", paddingTop: "1em" }}
+    >
       <div className=" card-body container">
         <h1
           style={{ textAlign: "center", color: "#f54c4c", fontWeight: "bold" }}
@@ -83,9 +86,9 @@ function Signup() {
               onChange={handleChange}
             />
           </div>
-          <div class="col text-center">
+          <div className="col text-center">
             <button type="submit" className="btn btn-custom zoom mb-3 mt-3">
-              Sing Up
+              Sign Up
             </button>
           </div>
         </form>
