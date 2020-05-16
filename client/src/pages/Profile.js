@@ -34,7 +34,7 @@ function Profile() {
             <div className="card-img-overlay col text-center mt-5">
               <div className="zoom1">
                 <Link
-                  to="/"
+                  to="/cocktailcategory"
                   className="card-title"
                   style={{
                     color: "white",
@@ -59,7 +59,7 @@ function Profile() {
               />
               <div className="zoom1">
                 <Link
-                  to="/"
+                  to="/cocktailcategory"
                   className="card-title mt-3"
                   style={{
                     color: "white",
@@ -88,7 +88,7 @@ function Profile() {
             <div className="card-img-overlay col text-center mt-5">
               <div className="zoom1">
                 <Link
-                  to="/"
+                  to="/foodcategory"
                   className="card-title"
                   style={{
                     color: "white",
@@ -113,7 +113,7 @@ function Profile() {
               />
               <div className="zoom1">
                 <Link
-                  to="/"
+                  to="/foodcategory"
                   className="card-title mt-3"
                   style={{
                     color: "white",
