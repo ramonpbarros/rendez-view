@@ -88,7 +88,7 @@ function Signup() {
           </div>
           <div className="col text-center">
             <button type="submit" className="btn btn-custom zoom mb-3 mt-3">
-              Sing Up
+              Sign Up
             </button>
           </div>
         </form>
