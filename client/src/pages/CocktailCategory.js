@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CategoryCard from "../components/CategoryCard";
 import API from "../utils/API/Cocktail";
 import { v4 as uuidv4 } from "uuid";
+
 function CocktailCategory() {
   const [state, setState] = useState([]);
   useEffect(() => {
