@@ -19,8 +19,12 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .card {
@@ -40,13 +44,42 @@
   box-shadow: 1px 1px 1px rgb(30, 30, 30);
   -moz-box-shadow: 1px 1px 1px rgb(30, 30, 30);
   -webkit-box-shadow: 1px 1px 1px rgb(30, 30, 30);
-  -khtml-box-shadow: 1px 1px 1px rgb(30, 30, 30)30;
+  -khtml-box-shadow: 1px 1px 1px rgb(30, 30, 30) 30;
 }
 
 .zoom {
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .zoom:hover {
   transform: scale(1.03);
+}
+.zoom1 {
+  transition: transform 0.3s;
+  z-index: 3;
+  position: relative;
+}
+
+.zoom1:hover {
+  transform: scale(1.1);
+  z-index: 3;
+  position: relative;
+}
+
+/* Create overlay for img */
+.transparent-bg {
+  position: relative;
+}
+.transparent-bg:before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.3);
 }
