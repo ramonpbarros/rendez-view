@@ -3,7 +3,7 @@ import {
   Route,
   BrowserRouter as Router,
   Switch,
-  Redirect,
+  Redirect
 } from "react-router-dom";
 import "./App.css";
 
@@ -14,15 +14,16 @@ import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import FoodCatgory from "./pages/FoodCategory";
-import CocktailCatgory from "./pages/CocktailCategory";
+import Homepage from "./pages/Homepage";
+import FoodCategory from "./pages/FoodCategory";
+import CocktailCategory from "./pages/CocktailCategory";
 
 function ProtectedRoute({ children, ...rest }) {
   const { isLoggedIn } = useAuth();
   if (isLoggedIn) {
     return children;
   }
-  return <Redirect to="/signup" />;
+  return <Redirect to="/homepage" />;
 }
 
 function App() {
@@ -30,22 +31,34 @@ function App() {
     <AuthProvider>
       <Router>
         <div>
-          <Navbar />
           <Switch>
             <ProtectedRoute exact path="/">
+              <Navbar />
               <Home />
             </ProtectedRoute>
             <Route exact path="/login">
+              <Navbar />
               <Login />
             </Route>
             <Route exact path="/signup">
+              <Navbar />
               <Signup />
             </Route>
+            <Route exact path="/homepage">
+              <Homepage />
+            </Route>
             <ProtectedRoute exact path="/profile">
+              <Navbar />
               <Profile />
             </ProtectedRoute>
-            <FoodCatgory exact path="/foodcategory"></FoodCatgory>
-            <CocktailCatgory exact path="/cocktailcategory"></CocktailCatgory>
+            <ProtectedRoute exact path="/foodcategory">
+              <Navbar />
+              <FoodCategory />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/cocktailcategory">
+              <Navbar />
+              <CocktailCategory />
+            </ProtectedRoute>
           </Switch>
         </div>
       </Router>

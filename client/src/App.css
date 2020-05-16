@@ -46,7 +46,23 @@
   -webkit-box-shadow: 1px 1px 1px rgb(30, 30, 30);
   -khtml-box-shadow: 1px 1px 1px rgb(30, 30, 30) 30;
 }
+.btn-custom-homepage {
+  background-color: white;
+  color: #f54c4c;
+  font-size: 20px;
+  width: 10em;
+  text-align: center;
+}
 
+.btn-custom-homepage:hover {
+  color: #f54c4c;
+  box-shadow: 1px 1px 1px rgb(30, 30, 30);
+  -moz-box-shadow: 1px 1px 1px rgb(30, 30, 30);
+  -webkit-box-shadow: 1px 1px 1px rgb(30, 30, 30);
+  -khtml-box-shadow: 1px 1px 1px rgb(30, 30, 30) 30;
+}
+
+/* Animate btns */
 .zoom {
   transition: transform 0.2s;
 }
@@ -54,6 +70,8 @@
 .zoom:hover {
   transform: scale(1.03);
 }
+
+/* Animate links on profile.js */
 .zoom1 {
   transition: transform 0.3s;
   z-index: 3;
