@@ -1,4 +1,5 @@
 require("dotenv").config();
+const axios = require("axios");
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -21,6 +22,16 @@ app.use(express.urlencoded({ extended: true }));
 
 initDb();
 
+app.get("/randomcocktail", (req, res) => {
+  axios
+    .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+    .then((response) => {
+      res.send(response.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 // Serve up static assets in production (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
