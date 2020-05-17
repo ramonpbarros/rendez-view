@@ -17,6 +17,7 @@ import Navbar from "./components/Navbar";
 import Homepage from "./pages/Homepage";
 import FoodCategory from "./pages/FoodCategory";
 import CocktailCategory from "./pages/CocktailCategory";
+import RandomPlan from "./pages/RandomPlan";
 
 function ProtectedRoute({ children, ...rest }) {
   const { isLoggedIn } = useAuth();
@@ -58,6 +59,10 @@ function App() {
             <ProtectedRoute exact path="/cocktailcategory">
               <Navbar />
               <CocktailCategory />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/randomplan">
+              <Navbar />
+              <RandomPlan />
             </ProtectedRoute>
           </Switch>
         </div>
