@@ -3,6 +3,7 @@ import API from "../utils/API/Cocktail";
 import APIF from "../utils/API/Food";
 import RandomDrinkCard from "../components/RandomDrinkCard";
 import RandomMealCard from "../components/RandomMealCard";
+import RandomMovieCard from "../components/RandomMovieCard";
 
 function RandomPlan() {
   const [randomDrink, setRandomDrink] = useState([]);
@@ -147,19 +148,7 @@ function RandomPlan() {
               />
             );
           })}
-          <div className="col mb-4">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-            </div>
-          </div>
+          <RandomMovieCard />
         </div>
       </div>
     </React.Fragment>
