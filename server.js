@@ -1,5 +1,5 @@
 require("dotenv").config();
-const axios = require("axios");
+// const axios = require("axios");
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -9,7 +9,7 @@ const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
 const errorMiddleware = require("./routes/errorMiddleware");
 const cocktailRouter = require("./controllers/cocktaildb");
-// const mealRouter = require("./controllers/mealdb");
+const mealRouter = require("./controllers/mealdb");
 
 const PORT = process.env.PORT || 3001;
 
@@ -29,9 +29,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// app.get("/randomcocktail", (req, res) => {
+// app.get("/randommeal", (req, res) => {
 //   axios
-//     .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+//     .get("https://www.themealdb.com/api/json/v1/1/random.php")
 //     .then((response) => {
 //       res.send(response.data);
 //     })
@@ -40,19 +40,8 @@ if (process.env.NODE_ENV === "production") {
 //     });
 // });
 
-app.get("/randommeal", (req, res) => {
-  axios
-    .get("https://www.themealdb.com/api/json/v1/1/random.php")
-    .then((response) => {
-      res.send(response.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
 app.use("/api", cocktailRouter);
-// app.use("/api", mealRouter);
+app.use("/api", mealRouter);
 app.use(authRouter, usersRouter, errorMiddleware);
 
 // Send all other requests to react app
