@@ -32,6 +32,17 @@ app.get("/randomcocktail", (req, res) => {
       console.log(err);
     });
 });
+
+app.get("/randommeal", (req, res) => {
+  axios
+    .get("https://www.themealdb.com/api/json/v1/1/random.php")
+    .then((response) => {
+      res.send(response.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 // Serve up static assets in production (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

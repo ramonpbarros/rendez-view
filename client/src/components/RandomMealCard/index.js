@@ -1,10 +1,10 @@
 import React from "react";
 
-function RandomDrinkCard(props) {
+function RandomMealCard(props) {
   return (
     <div className="col mb-4" key={props.key}>
       <div className="card  border-dark">
-        <img src={props.image} className="card-img-top" alt="cocktailImg" />
+        <img src={props.image} className="card-img-top" alt="mealImg" />
         <div className="card-body">
           <h5 className="card-title">
             <strong>{props.name}</strong>
@@ -39,4 +39,4 @@ function RandomDrinkCard(props) {
   );
 }
 
-export default RandomDrinkCard;
+export default RandomMealCard;
