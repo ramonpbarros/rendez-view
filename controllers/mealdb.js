@@ -9,8 +9,12 @@ router.get("/randommeal", (req, res) => {
     .then((response) => {
       return res.json(response.data);
     })
-    .catch((err) => {
-      console.log(err);
+    .catch((error) => {
+      if (error.response) {
+        res.sendStatus(error.response.statusText);
+      } else {
+        res.sendStatus(500);
+      }
     });
 });
 
