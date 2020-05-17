@@ -25,7 +25,8 @@ function Profile() {
         res.data.drinks.map((res) => ({
           id: res.idDrink,
           name: res.strDrink,
-          image: res.strDrinkThumb
+          image: res.strDrinkThumb,
+          instruction: res.strInstructions
         }))
       );
     });  
@@ -34,7 +35,6 @@ function Profile() {
   return (
     <React.Fragment>
       {randomDrink.map((item)=>{
-        console.log(item.name)
         return <h1 key={item.id}>{item.name}</h1>
       })}
       <Jumbotron username={username} email={email} />
