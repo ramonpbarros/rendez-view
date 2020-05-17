@@ -8,6 +8,8 @@ const initDb = require("./config/initDb");
 const authRouter = require("./routes/auth");
 const usersRouter = require("./routes/users");
 const errorMiddleware = require("./routes/errorMiddleware");
+const cocktailRouter = require("./controllers/cocktaildb");
+// const mealRouter = require("./controllers/mealdb");
 
 const PORT = process.env.PORT || 3001;
 
@@ -22,16 +24,21 @@ app.use(express.urlencoded({ extended: true }));
 
 initDb();
 
-app.get("/randomcocktail", (req, res) => {
-  axios
-    .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-    .then((response) => {
-      res.send(response.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
+// Serve up static assets in production (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+// app.get("/randomcocktail", (req, res) => {
+//   axios
+//     .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+//     .then((response) => {
+//       res.send(response.data);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// });
 
 app.get("/randommeal", (req, res) => {
   axios
@@ -43,11 +50,9 @@ app.get("/randommeal", (req, res) => {
       console.log(err);
     });
 });
-// Serve up static assets in production (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
 
+app.use("/api", cocktailRouter);
+// app.use("/api", mealRouter);
 app.use(authRouter, usersRouter, errorMiddleware);
 
 // Send all other requests to react app

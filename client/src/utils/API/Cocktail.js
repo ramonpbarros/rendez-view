@@ -15,6 +15,6 @@ export default {
   },
 
   getRandom: function () {
-    return axios.get("/randomcocktail");
+    return axios.get("/api/randomcocktail");
   }
 };
