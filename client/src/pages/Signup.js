@@ -39,8 +39,8 @@ function Signup() {
 
   return (
     <div
-      className="card"
-      style={{ width: 500, height: 450, marginTop: "5em", paddingTop: "1em" }}
+      className="card col-sm-6 col-lg-5"
+      style={{ height: 460, marginTop: "5em", paddingTop: "1em" }}
     >
       <div className=" card-body container">
         <h1
