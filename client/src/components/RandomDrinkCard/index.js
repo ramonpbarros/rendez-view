@@ -3,7 +3,7 @@ import React from "react";
 function RandomDrinkCard(props) {
   return (
     <div className="col mb-4" key={props.key}>
-      <div className="card  border-dark h-100">
+      <div className="card  border-dark">
         <img src={props.image} className="card-img-top" alt="cocktailImg" />
         <div className="card-body">
           <h5 className="card-title">
@@ -27,6 +27,9 @@ function RandomDrinkCard(props) {
           </p>
           <p className="card-text">
             {props.measure5} {props.ingredient5}
+          </p>
+          <p className="card-text">
+            {props.measure6} {props.ingredient6}
           </p>
           <hr />
           <p>
