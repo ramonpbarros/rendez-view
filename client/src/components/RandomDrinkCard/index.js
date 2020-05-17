@@ -28,6 +28,9 @@ function RandomDrinkCard(props) {
           <p className="card-text">
             {props.measure5} {props.ingredient5}
           </p>
+          <p className="card-text">
+            {props.measure6} {props.ingredient6}
+          </p>
           <hr />
           <p>
             <strong>Instruction:</strong>
