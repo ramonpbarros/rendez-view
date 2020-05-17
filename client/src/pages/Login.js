@@ -24,7 +24,10 @@ function Login() {
   };
 
   return (
-    <div className="card" style={{ width: 500, height: 450, marginTop: "5em", paddingTop: "1em" }}>
+    <div
+      className="card col-sm-6 col-lg-5"
+      style={{ height: 460, marginTop: "5em", paddingTop: "1em" }}
+    >
       <div className=" card-body container">
         <h1
           style={{ textAlign: "center", color: "#f54c4c", fontWeight: "bold" }}
@@ -68,7 +71,9 @@ function Login() {
         </form>
         <p style={{ textAlign: "center" }}>
           <span style={{ color: "gray" }}>Don't an account? </span>
-          <Link to="/signup" style={{ color: "grey", fontWeight: "bold" }}>Sign Up</Link>
+          <Link to="/signup" style={{ color: "grey", fontWeight: "bold" }}>
+            Sign Up
+          </Link>
         </p>
       </div>
     </div>
