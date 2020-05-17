@@ -29,19 +29,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// app.get("/randommeal", (req, res) => {
-//   axios
-//     .get("https://www.themealdb.com/api/json/v1/1/random.php")
-//     .then((response) => {
-//       res.send(response.data);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// });
-
 app.use("/api", cocktailRouter);
 app.use("/api", mealRouter);
+
 app.use(authRouter, usersRouter, errorMiddleware);
 
 // Send all other requests to react app
