@@ -8,13 +8,9 @@ const usersRouter = require("./routes/users");
 const errorMiddleware = require("./routes/errorMiddleware");
 const cocktailRouter = require("./controllers/cocktaildb");
 const mealRouter = require("./controllers/mealdb");
-const mongoose = require("mongoose");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-
-const mongoUri = process.env.MONGODB_URI || "mongodb://localhost/rendezview";
-mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // log all requests to the console in development
 if (process.env.NODE_ENV !== "production") {
