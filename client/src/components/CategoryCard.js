@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 const styles = {
   sectionStyles: {
     width: "18rem",
@@ -24,7 +26,9 @@ function CategoryCard(props) {
           alt={props.name}
         />
         <div className="card-body">
-          <h2 className="card-text">{props.name}</h2>
+          <Link to={props.link}>
+            <h2 className="card-text">{props.name}</h2>
+          </Link>
         </div>
       </div>
     </div>

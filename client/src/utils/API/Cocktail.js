@@ -6,8 +6,8 @@ export default {
     return axios.get("/api/cocktailcategory");
   },
 
-  getAlcohol: function (query) {
-    return axios.get(BASEURL + "/filter.php?i=" + query);
+  getAlcohol: function () {
+    return axios.get("/api/cocktailcategory/:name");
   },
 
   getCocktail: function (id) {

@@ -3,7 +3,7 @@ import {
   Route,
   BrowserRouter as Router,
   Switch,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 import "./App.css";
 
@@ -18,6 +18,8 @@ import Homepage from "./pages/Homepage";
 import FoodCategory from "./pages/FoodCategory";
 import CocktailCategory from "./pages/CocktailCategory";
 import RandomPlan from "./pages/RandomPlan";
+import OneFoodCategory from "./pages/OneFoodCategory";
+import OneCocktailCategory from "./pages/OneCocktailCategory";
 
 function ProtectedRoute({ children, ...rest }) {
   const { isLoggedIn } = useAuth();
@@ -59,6 +61,14 @@ function App() {
             <ProtectedRoute exact path="/cocktailcategory">
               <Navbar />
               <CocktailCategory />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/cocktailcategory/:name">
+              <Navbar />
+              <OneCocktailCategory />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/foodcategory/:name">
+              <Navbar />
+              <OneFoodCategory />
             </ProtectedRoute>
             <ProtectedRoute exact path="/randomplan">
               <Navbar />

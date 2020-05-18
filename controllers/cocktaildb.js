@@ -31,5 +31,22 @@ router.get("/randomcocktail", (req, res) => {
       }
     });
 });
+router.get("/cocktailcategory/:name", (req, res) => {
+  axios
+    .get(
+      "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" +
+        req.params.name
+    )
+    .then((response) => {
+      return res.json(response.data);
+    })
+    .catch((error) => {
+      if (error.response) {
+        res.sendStatus(error.response.statusText);
+      } else {
+        res.sendStatus(500);
+      }
+    });
+});
 
 module.exports = router;

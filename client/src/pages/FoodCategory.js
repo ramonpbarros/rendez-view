@@ -18,7 +18,14 @@ function FoodCategory() {
   }, []);
   function renderCategories() {
     return state.map((item) => {
-      return <CategoryCard key={item.id} name={item.name} image={item.image} />;
+      return (
+        <CategoryCard
+          key={item.id}
+          name={item.name}
+          image={item.image}
+          link={"/foodcategory/" + item.name}
+        />
+      );
     });
   }
   return (
