@@ -1,5 +1,4 @@
 require("dotenv").config();
-// const axios = require("axios");
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
@@ -16,6 +15,7 @@ const PORT = process.env.PORT || 3001;
 
 const mongoUri = process.env.MONGODB_URI || "mongodb://localhost/rendezview";
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
+
 // log all requests to the console in development
 if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev"));
