@@ -17,5 +17,19 @@ router.get("/randommeal", (req, res) => {
       }
     });
 });
+router.get("/foodcategory", (req, res) => {
+  axios
+    .get("https://www.themealdb.com/api/json/v1/1/categories.php")
+    .then((response) => {
+      return res.json(response.data);
+    })
+    .catch((error) => {
+      if (error.response) {
+        res.sendStatus(error.response.statusText);
+      } else {
+        res.sendStatus(500);
+      }
+    });
+});
 
 module.exports = router;
