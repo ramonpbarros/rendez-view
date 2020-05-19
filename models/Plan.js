@@ -6,56 +6,22 @@ const planSchema = new Schema({
     type: String,
     required: true,
   },
-  cName: {
-    type: String,
-    required: true,
+  meal: {
+    name: { type: String, required: true },
+    img: { type: String, require: true },
+    ingredient: [{ type: String, require: true }],
+    measure: [{ type: String, require: true }],
+    instruction: { type: String, require: true },
   },
-  cImg: {
-    type: String,
-    require: true,
-  },
-  cIngredient: [
-    {
-      type: String,
-      require: true,
-    },
-  ],
-  cMeasure: [
-    {
-      type: String,
-      require: true,
-    },
-  ],
-  cInstruction: {
-    type: String,
-    require: true,
-  },
-  mName: {
-    type: String,
-    required: true,
-  },
-  mImg: {
-    type: String,
-    require: true,
-  },
-  mIngredient: [
-    {
-      type: String,
-      require: true,
-    },
-  ],
-  mMeasure: [
-    {
-      type: String,
-      require: true,
-    },
-  ],
-  mInstruction: {
-    type: String,
-    require: true,
+  cocktail: {
+    name: { type: String, required: true },
+    img: { type: String, require: true },
+    ingredient: [{ type: String, require: true }],
+    measure: [{ type: String, require: true }],
+    instruction: { type: String, require: true },
   },
 });
 
-const Plan = mongoose.model("Cocktail", planSchema);
+const Plan = mongoose.model("Plan", planSchema);
 
 module.exports = Plan;
