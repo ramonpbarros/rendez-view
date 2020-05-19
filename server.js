@@ -1,7 +1,5 @@
 require("dotenv").config();
-// const axios = require("axios");
 const express = require("express");
-const app = express();
 const path = require("path");
 const morgan = require("morgan");
 const initDb = require("./config/initDb");
@@ -11,6 +9,7 @@ const errorMiddleware = require("./routes/errorMiddleware");
 const cocktailRouter = require("./controllers/cocktaildb");
 const mealRouter = require("./controllers/mealdb");
 
+const app = express();
 const PORT = process.env.PORT || 3001;
 
 // log all requests to the console in development
