@@ -6,8 +6,8 @@ export default {
     return axios.get("api/foodcategory");
   },
 
-  getFoodCategory: function (query) {
-    return axios.get(BASEURL + "/filter.php?c=" + query);
+  getFoodCategory: function (name) {
+    return axios.get("/api/foodcategory/" + name);
   },
 
   getMeal: function (id) {

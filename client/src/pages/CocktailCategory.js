@@ -25,7 +25,7 @@ function CocktailCategory() {
           key={item.id}
           name={item.name}
           image={item.image}
-          link={"api/cocktailcategory/" + item.name}
+          link={`/cocktailcategory/${item.name}`}
         />
       );
     });

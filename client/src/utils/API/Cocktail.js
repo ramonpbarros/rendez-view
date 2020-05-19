@@ -6,8 +6,8 @@ export default {
     return axios.get("/api/cocktailcategory");
   },
 
-  getAlcohol: function () {
-    return axios.get("/api/cocktailcategory/:name");
+  getAlcohol: function (name) {
+    return axios.get("api/cocktailcategory/" + name);
   },
 
   getCocktail: function (id) {

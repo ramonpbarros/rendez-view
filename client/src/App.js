@@ -23,10 +23,28 @@ import OneCocktailCategory from "./pages/OneCocktailCategory";
 
 function ProtectedRoute({ children, ...rest }) {
   const { isLoggedIn } = useAuth();
-  if (isLoggedIn) {
-    return children;
-  }
-  return <Redirect to="/homepage" />;
+  return (
+    <Route {...rest}>
+      {isLoggedIn ? children : <Redirect to="/homepage" />}
+    </Route>
+  );
+  /*
+  <Route
+      {...rest}
+      render={({ location }) =>
+        fakeAuth.isAuthenticated ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location }
+            }}
+          />
+        )
+      }
+    />
+  */
 }
 
 function App() {

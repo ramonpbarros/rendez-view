@@ -17,9 +17,9 @@ router.get("/cocktailcategory", (req, res) => {
       }
     });
 });
-router.get("/randomcocktail", (req, res) => {
+router.get("/cocktailcategory/:name", (req, res) => {
   axios
-    .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+    .get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + req.name)
     .then((response) => {
       return res.json(response.data);
     })
@@ -31,12 +31,9 @@ router.get("/randomcocktail", (req, res) => {
       }
     });
 });
-router.get("/cocktailcategory/:name", (req, res) => {
+router.get("/randomcocktail", (req, res) => {
   axios
-    .get(
-      "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" +
-        req.params.name
-    )
+    .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
     .then((response) => {
       return res.json(response.data);
     })
