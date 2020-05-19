@@ -26,6 +26,12 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  plans: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Plan",
+    },
+  ],
 });
 
 // Execute before each user.save() call
