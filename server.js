@@ -8,6 +8,7 @@ const usersRouter = require("./routes/users");
 const errorMiddleware = require("./routes/errorMiddleware");
 const cocktailRouter = require("./controllers/cocktaildb");
 const mealRouter = require("./controllers/mealdb");
+const plansRouter = require("./controllers/plans");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -30,6 +31,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use("/api", cocktailRouter);
 app.use("/api", mealRouter);
+app.use("/api", plansRouter);
 
 app.use(authRouter, usersRouter, errorMiddleware);
 
