@@ -6,8 +6,8 @@ import { useParams } from "react-router-dom";
 function OneCocktailCategory() {
   const { name } = useParams();
   const [state, setState] = useState([]);
+
   useEffect(() => {
-    console.log(name);
     API.getAlcohol(name)
       .then((res) =>
         setState(
@@ -20,6 +20,7 @@ function OneCocktailCategory() {
       )
       .catch((err) => console.log(err));
   }, [name]);
+
   function renderCategories() {
     return state.map((item) => {
       return (
@@ -32,6 +33,7 @@ function OneCocktailCategory() {
       );
     });
   }
+
   return (
     <div className="container">
       <div className="row">
@@ -45,4 +47,5 @@ function OneCocktailCategory() {
     </div>
   );
 }
+
 export default OneCocktailCategory;
