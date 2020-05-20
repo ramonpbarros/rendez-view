@@ -1,19 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 const styles = {
   sectionStyles: {
     width: "18rem",
-    height: "300px",
+    height: "90%",
   },
   cardStyle: {
-    margin: "10px",
+    margin: "20px",
   },
   img: {
-    width: "80%",
+    width: "100%",
     height: "65%",
     margin: "0,auto",
   },
+  title: {
+    fontSize: "142%",
+    width: "100%",
+  },
 };
 function CategoryCard(props) {
+  console.log(props.link);
   return (
     <div className="col-sm-3" style={styles.cardStyle}>
       <div className="card" style={styles.sectionStyles}>
@@ -24,7 +31,11 @@ function CategoryCard(props) {
           alt={props.name}
         />
         <div className="card-body">
-          <h2 className="card-text">{props.name}</h2>
+          <Link to={props.link}>
+            <h2 className="card-text" style={styles.title}>
+              {props.name}
+            </h2>
+          </Link>
         </div>
       </div>
     </div>
