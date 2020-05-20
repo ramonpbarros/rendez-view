@@ -1,4 +1,5 @@
 import React from "react";
+import MediaQuery from "react-responsive";
 import { Link } from "react-router-dom";
 import { FaCocktail, FaUtensils, FaFilm } from "react-icons/fa";
 
@@ -10,6 +11,7 @@ function Homepage() {
         style={{ backgroundColor: "#f54c4c", color: "white", height: 600 }}
       >
         <div className="container">
+          <MediaQuery minDeviceWidth={1224}>
           <img
             src="https://images.unsplash.com/photo-1488116593952-937c38246bbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
             alt="imgHome"
@@ -17,6 +19,7 @@ function Homepage() {
             width="35%"
             style={{ float: "left", border: "solid black 1", borderRadius: 10 }}
           />
+          </MediaQuery>
           <h1
             className="display-4 mb-5 text-center"
             style={{ fontWeight: "bold" }}
