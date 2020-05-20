@@ -6,11 +6,10 @@ import { useParams } from "react-router-dom";
 
 function CocktailPage() {
   const { id } = useParams();
-  console.log(id);
   const [state, setState] = useState([]);
+
   useEffect(() => {
     API.getCocktail(id).then((res) => {
-      console.log(res.data);
       setState(
         res.data.drinks.map((res) => ({
           m_id: res.idDrink,
@@ -53,6 +52,7 @@ function CocktailPage() {
       );
     });
   }, [id]);
+
   function renderCategories() {
     return state.map((item) => {
       return (
@@ -97,6 +97,7 @@ function CocktailPage() {
       );
     });
   }
+  
   return (
     <div className="container">
       <div className="row">

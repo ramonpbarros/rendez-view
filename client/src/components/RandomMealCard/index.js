@@ -2,7 +2,7 @@ import React from "react";
 
 function RandomMealCard(props) {
   return (
-    <div className="col mb-4" key={props.key}>
+    <div className="col mb-4 mt-5">
       <div className="card  border-dark">
         <img src={props.image} className="card-img-top" alt="mealImg" />
         <div className="card-body">

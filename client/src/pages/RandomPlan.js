@@ -16,7 +16,7 @@ function RandomPlan() {
     APIP.savePlan({
       name: planName,
       meal: randomMeal[0].m_name,
-      meal: randomDrink[0].name
+      cocktail: randomDrink[0].name
     }).then((res) => {
       setPlanName("")
     });
@@ -142,8 +142,7 @@ function RandomPlan() {
           <button
             onClick={refreshPage}
             className="btn btn-custom zoom btn-lg m-4"
-            href="#"
-            role="button"
+            href="#" 
           >
             Try Again!
           </button>
