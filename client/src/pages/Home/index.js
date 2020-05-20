@@ -1,38 +1,79 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import logo from "./logo.svg";
+import { Link } from "react-router-dom";
 import "./home.css";
-import { useAuth } from "../../utils/auth";
 
 function Home() {
-  const { user, logout } = useAuth();
-  const history = useHistory();
-
-  const goToEditProfile = () => history.push("/profile");
-
   return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome {user.email}</h2>
+    <React.Fragment>
+      <div
+        className="jumbotron container"
+        style={{ backgroundColor: "white", paddingBottom: 32 }}
+      >
+        <h1
+          className="display-4"
+          style={{ color: "#f54c4c", fontWeight: "bold" }}
+        >
+          Create Your Plan!
+        </h1>
+        <p className="lead">
+          This is a simple hero unit, a simple jumbotron-style component for
+          calling extra attention to featured content or information.
+        </p>
+        <div className="col text-center mt-3">
+          <Link
+            to="/cocktailcategory"
+            className="btn btn-custom zoom btn-lg m-4"
+            href="#"
+            role="button"
+          >
+            Search for Drinks
+          </Link>
+          <Link
+            to="/foodcategory"
+            className="btn btn-custom zoom btn-lg"
+            href="#"
+            role="button"
+          >
+            Search for Meals
+          </Link>
+        </div>
+        <hr className="my-4" />
+        <div className="col text-center mt-5">
+          <form>
+            <div className="form-group">
+              <input
+                type="text"
+                className="form-control form-control-lg"
+                id="inputPlanName"
+                placeholder="Enter plan's name"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                className="form-control form-control-lg"
+                id="input"
+                placeholder="Enter drink"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                className="form-control form-control-lg"
+                placeholder="Enter meal"
+                id="exampleInputPassword1"
+              />
+              <small id="emailHelp" className="form-text text-muted">
+                Make sure you type existing meal and drink. If you not so sure click on the search buttons.
+              </small>
+            </div>
+            <button type="submit" className="btn btn-custom zoom btn-lg m-4">
+              Save Plan
+            </button>
+          </form>
+        </div>
       </div>
-      <p className="App-intro">
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={goToEditProfile}
-        >
-          Go to Profile
-        </button>
-        <button
-          type="button"
-          className="btn btn-danger"
-          onClick={() => logout()}
-        >
-          Logout
-        </button>
-      </p>
-    </div>
+    </React.Fragment>
   );
 }
 
