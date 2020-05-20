@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API/Cocktail";
 import APIF from "../utils/API/Food";
+import APIP from "../utils/API/Plan";
 import RandomDrinkCard from "../components/RandomDrinkCard";
 import RandomMealCard from "../components/RandomMealCard";
 import RandomMovieCard from "../components/RandomMovieCard";
@@ -8,33 +9,16 @@ import RandomMovieCard from "../components/RandomMovieCard";
 function RandomPlan() {
   const [randomDrink, setRandomDrink] = useState([]);
   const [randomMeal, setRandomMeal] = useState([]);
-  const [plan, setPlan] = useState({
-    name: "",
-    meal: {
-      name: ""
-    },
-    cocktail: {
-      name: ""
-    }
-  });
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setPlan({ ...plan, [name]: value });
-  };
+  const [planName, setPlanName]  = useState("");
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    API.addNewMember(plan).then((res) => {
-      setPlan({
-        name: "",
-        meal: {
-          name: ""
-        },
-        cocktail: {
-          name: ""
-        }
-      });
+    APIP.savePlan({
+      name: planName,
+      meal: randomMeal[0].m_name,
+      meal: randomDrink[0].name
+    }).then((res) => {
+      setPlanName("")
     });
   };
 
@@ -138,15 +122,16 @@ function RandomPlan() {
                 className="form-control"
                 placeholder="Plan's name"
                 name="name"
-                onChange={handleInputChange}
-                value={plan.name}
+                onChange={(e) => setPlanName(e.target.value)}
+                value={planName}
                 aria-label="Recipient's username"
                 aria-describedby="button-addon2"
               />
               <div className="input-group-append">
                 <button
                   className="btn zoom save-btn-custom"
-                  type="button"
+                  type="submit"
+                  value="Submit"
                   id="button-addon2"
                 >
                   Save Plan
