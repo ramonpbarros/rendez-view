@@ -1,8 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import API from "../../utils/API/Plan";
 import "./home.css";
 
 function Home() {
+  // const [plans, setPlans] = useState([]);
+  const [planForm, setPlan] = useState({
+    name: "",
+    meal: "",
+    cocktail:  ""
+  });
+
+  // useEffect(() => {
+  //   loadPlans();
+  // }, []);
+
+  // function loadPlans() {
+  //   API.getAllPlans()
+  //     .then((res) => setPlans(res.data))
+  //     .catch((err) => console.log(err));
+  // }
+
+  const handleInputChange = (event) => {
+    const {name, value} = event.target;
+
+    setPlan({ ...planForm, [name]: value });
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    API.savePlan(planForm)
+      .then((res) => {
+        setPlan({
+          name: "",
+          meal: {
+            name: ""
+          },
+          cocktail: {
+            name: ""
+          }
+        });
+      })
+      // .then(() => loadPlans())
+      .catch((err) => console.log(err));
+  };
+
   return (
     <React.Fragment>
       <div
@@ -39,20 +81,26 @@ function Home() {
         </div>
         <hr className="my-4" />
         <div className="col text-center mt-5">
-          <form>
+          <form onSubmit={handleFormSubmit}>
             <div className="form-group">
               <input
                 type="text"
                 className="form-control form-control-lg"
+                name="name"
+                onChange={handleInputChange}
+                value={planForm.name}
                 id="inputPlanName"
-                placeholder="Enter plan's name"
+                placeholder="Enter planForm's name"
               />
             </div>
             <div className="form-group">
               <input
                 type="text"
                 className="form-control form-control-lg"
-                id="input"
+                name="cocktail"
+                onChange={handleInputChange}
+                value={planForm.cocktail}
+                id="inputDrink"
                 placeholder="Enter drink"
               />
             </div>
@@ -60,14 +108,22 @@ function Home() {
               <input
                 type="text"
                 className="form-control form-control-lg"
+                name="meal"
+                onChange={handleInputChange}
+                value={planForm.meal}
+                id="inputMeal"
                 placeholder="Enter meal"
-                id="exampleInputPassword1"
               />
               <small id="emailHelp" className="form-text text-muted">
-                Make sure you type existing meal and drink. If you not so sure click on the search buttons.
+                Make sure you type existing meal and drink. If you not so sure
+                click on the search buttons.
               </small>
             </div>
-            <button type="submit" className="btn btn-custom zoom btn-lg m-4">
+            <button
+              type="submit"
+              value="Submit"
+              className="btn btn-custom zoom btn-lg m-4"
+            >
               Save Plan
             </button>
           </form>
