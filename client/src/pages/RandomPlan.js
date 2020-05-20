@@ -8,6 +8,51 @@ import RandomMovieCard from "../components/RandomMovieCard";
 function RandomPlan() {
   const [randomDrink, setRandomDrink] = useState([]);
   const [randomMeal, setRandomMeal] = useState([]);
+  const [plan, setPlan] = useState({
+    name: "",
+    meal: {
+      name: "",
+      img: "",
+      ingredient: [""],
+      measure: [""],
+      instruction: ""
+    },
+    cocktail: {
+      name: "",
+      img: "",
+      ingredient: [""],
+      measure: [""],
+      instruction: ""
+    }
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setPlan({ ...plan, [name]: value });
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    API.addNewMember(plan).then((res) => {
+      setPlan({
+        name: "",
+        meal: {
+          name: "",
+          img: "",
+          ingredient: [""],
+          measure: [""],
+          instruction: ""
+        },
+        cocktail: {
+          name: "",
+          img: "",
+          ingredient: [""],
+          measure: [""],
+          instruction: ""
+        }
+      });
+    });
+  };
 
   useEffect(() => {
     API.getRandom().then((res) => {
@@ -80,8 +125,61 @@ function RandomPlan() {
     });
   }, []);
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
     <React.Fragment>
+      <div
+        className="jumbotron container"
+        style={{ backgroundColor: "white", paddingBottom: 32 }}
+      >
+        <h1
+          className="display-4"
+          style={{ color: "#f54c4c", fontWeight: "bold" }}
+        >
+          Random Plan!
+        </h1>
+        <p className="lead">
+          This is a simple hero unit, a simple jumbotron-style component for
+          calling extra attention to featured content or information.
+        </p>
+        <hr className="my-4" />
+        <div className="col text-center mt-5">
+          <form onSubmit={handleFormSubmit}>
+            <div className="input-group mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Plan's name"
+                name="name"
+                onChange={handleInputChange}
+                value={plan.name}
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+              />
+              <div className="input-group-append">
+                <button
+                  className="btn zoom save-btn-custom"
+                  type="button"
+                  id="button-addon2"
+                >
+                  Save Plan
+                </button>
+              </div>
+            </div>
+          </form>
+          <button
+            onClick={refreshPage}
+            className="btn btn-custom zoom btn-lg m-4"
+            href="#"
+            role="button"
+          >
+            Try Again!
+          </button>
+        </div>
+      </div>
       <div className="container mt-5">
         <div className="row row-cols-1 row-cols-md-3">
           {randomDrink.map((item) => {
