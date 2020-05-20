@@ -4,14 +4,23 @@ import API from "../../utils/API/Plan";
 import "./home.css";
 
 function Home() {
+  const [buttonText, setButtonText] = useState("Save Plan");
   const [planForm, setPlan] = useState({
     name: "",
     meal: "",
-    cocktail:  ""
+    cocktail: ""
   });
 
+  const changeText = (text) => {
+    if (planForm.name === ""){
+      alert("Please Fill All Required Field")
+    } else {
+      setButtonText(text)
+    }
+  };
+
   const handleInputChange = (event) => {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
 
     setPlan({ ...planForm, [name]: value });
   };
@@ -65,7 +74,7 @@ function Home() {
         </div>
         <hr className="my-4" />
         <div className="col text-center mt-5">
-          <form onSubmit={handleFormSubmit}>
+          <form onSubmit={handleFormSubmit} id="myForm">
             <div className="form-group">
               <input
                 type="text"
@@ -107,8 +116,9 @@ function Home() {
               type="submit"
               value="Submit"
               className="btn btn-custom zoom btn-lg m-4"
+              onClick={() => changeText("Plan Saved!")}
             >
-              Save Plan
+              {buttonText}
             </button>
           </form>
         </div>
