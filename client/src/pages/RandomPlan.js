@@ -15,13 +15,8 @@ function RandomPlan() {
     event.preventDefault();
     APIP.savePlan({
       name: planName,
-      meal: {
-        name: randomMeal[0].m_name
-      },
-      meal: {
-        name: randomDrink[0].name
-      },
-
+      meal: randomMeal[0].m_name,
+      meal: randomDrink[0].name
     }).then((res) => {
       setPlanName("")
     });

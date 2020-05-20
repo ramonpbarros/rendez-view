@@ -4,22 +4,11 @@ import API from "../../utils/API/Plan";
 import "./home.css";
 
 function Home() {
-  // const [plans, setPlans] = useState([]);
   const [planForm, setPlan] = useState({
     name: "",
     meal: "",
     cocktail:  ""
   });
-
-  // useEffect(() => {
-  //   loadPlans();
-  // }, []);
-
-  // function loadPlans() {
-  //   API.getAllPlans()
-  //     .then((res) => setPlans(res.data))
-  //     .catch((err) => console.log(err));
-  // }
 
   const handleInputChange = (event) => {
     const {name, value} = event.target;
@@ -33,15 +22,10 @@ function Home() {
       .then((res) => {
         setPlan({
           name: "",
-          meal: {
-            name: ""
-          },
-          cocktail: {
-            name: ""
-          }
+          meal: "",
+          cocktail: ""
         });
       })
-      // .then(() => loadPlans())
       .catch((err) => console.log(err));
   };
 
