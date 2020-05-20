@@ -49,4 +49,21 @@ router.get("/foodcategory/:name", (req, res) => {
       }
     });
 });
+router.get("/foodcategory/:name/:id", (req, res) => {
+  axios
+    .get("https://www.themealdb.com/api/json/v1/1//lookup.php", {
+      params: { i: req.params.id },
+    })
+    .then((response) => {
+      return res.json(response.data);
+      // console.log(response.data.meals);
+    })
+    .catch((error) => {
+      if (error.response) {
+        res.sendStatus(error.response.statusText);
+      } else {
+        res.sendStatus(500);
+      }
+    });
+});
 module.exports = router;

@@ -1,5 +1,4 @@
 import axios from "axios";
-const BASEURL = "https://www.themealdb.com/api/json/v1/1";
 
 export default {
   getFoodCategories: function () {
@@ -9,9 +8,8 @@ export default {
   getFoodCategory: function (name) {
     return axios.get("/api/foodcategory/" + name);
   },
-
   getMeal: function (id) {
-    return axios.get(BASEURL + "/lookup.php?i=" + id);
+    return axios.get("/api/foodcategory/:name/" + id);
   },
 
   getRandom: function () {

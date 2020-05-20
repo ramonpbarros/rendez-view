@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 function OneFoodCategory() {
   const { name } = useParams();
-  // console.log(name);
+
   const [state, setState] = useState([]);
   useEffect(() => {
     API.getFoodCategory(name)
@@ -28,7 +28,7 @@ function OneFoodCategory() {
           key={item.id}
           name={item.name}
           image={item.image}
-          link={"/"}
+          link={`/foodcategory/${name}/${item.id}`}
         />
       );
     });
@@ -36,8 +36,8 @@ function OneFoodCategory() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-12">
-          <h2>{name} Recipes</h2>
+        <div className="col-sm-4 ml-4">
+          <h1>{name} Recipes</h1>
         </div>
       </div>
       <div className="row">{renderCategories()}</div>;

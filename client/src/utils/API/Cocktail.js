@@ -7,11 +7,11 @@ export default {
   },
 
   getAlcohol: function (name) {
-    return axios.get("api/cocktailcategory/" + name);
+    return axios.get("/api/cocktailcategory/" + name);
   },
 
   getCocktail: function (id) {
-    return axios.get(BASEURL + "/lookup.php?iid=" + id);
+    return axios.get("/api/cocktailcategory/:name/" + id);
   },
 
   getRandom: function () {

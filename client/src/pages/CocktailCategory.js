@@ -11,8 +11,8 @@ function CocktailCategory() {
         setState(
           res.data.drinks.map((res) => ({
             id: uuidv4(),
-            name: res.strIngredient1,
-            image: `https://www.thecocktaildb.com/images/ingredients/${res.strIngredient1}-Medium.png`,
+            name: res.strCategory,
+            image: `https://www.thecocktaildb.com/images/ingredients/Gin-Medium.png`,
           }))
         )
       )

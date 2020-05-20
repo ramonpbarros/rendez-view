@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CategoryCard from "../components/CategoryCard";
 import API from "../utils/API/Cocktail";
-import { v4 as uuidv4 } from "uuid";
 import { useParams } from "react-router-dom";
 
 function OneCocktailCategory() {
@@ -9,17 +8,17 @@ function OneCocktailCategory() {
   const [state, setState] = useState([]);
   useEffect(() => {
     console.log(name);
-    // API.getAlcohol(name)
-    //   .then((res) =>
-    //     setState(
-    //       res.data.drinks.map((res) => ({
-    //         id: uuidv4(),
-    //         name: res.strDrink,
-    //         image: res.strDrinkThumb,
-    //       }))
-    //     )
-    //   )
-    //   .catch((err) => console.log(err));
+    API.getAlcohol(name)
+      .then((res) =>
+        setState(
+          res.data.drinks.map((res) => ({
+            id: res.idDrink,
+            name: res.strDrink,
+            image: res.strDrinkThumb,
+          }))
+        )
+      )
+      .catch((err) => console.log(err));
   }, [name]);
   function renderCategories() {
     return state.map((item) => {
@@ -28,7 +27,7 @@ function OneCocktailCategory() {
           key={item.id}
           name={item.name}
           image={item.image}
-          // link={"/cocktailcategory/" + item.name}
+          link={`/cocktailcategory/${name}/${item.id}`}
         />
       );
     });

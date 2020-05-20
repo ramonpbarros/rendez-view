@@ -7,7 +7,7 @@ const styles = {
     height: "90%",
   },
   cardStyle: {
-    margin: "10px",
+    margin: "20px",
   },
   img: {
     width: "100%",
@@ -15,7 +15,7 @@ const styles = {
     margin: "0,auto",
   },
   title: {
-    fontSize: "140%",
+    fontSize: "142%",
     width: "100%",
   },
 };
