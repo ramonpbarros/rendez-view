@@ -8,17 +8,9 @@ const planSchema = new Schema({
   },
   meal: {
     name: { type: String, required: true },
-    img: { type: String, require: true },
-    ingredient: [{ type: String, require: true }],
-    measure: [{ type: String, require: true }],
-    instruction: { type: String, require: true },
   },
   cocktail: {
     name: { type: String, required: true },
-    img: { type: String, require: true },
-    ingredient: [{ type: String, require: true }],
-    measure: [{ type: String, require: true }],
-    instruction: { type: String, require: true },
   },
 });
 

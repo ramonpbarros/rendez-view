@@ -11,18 +11,10 @@ function RandomPlan() {
   const [plan, setPlan] = useState({
     name: "",
     meal: {
-      name: "",
-      img: "",
-      ingredient: [""],
-      measure: [""],
-      instruction: ""
+      name: ""
     },
     cocktail: {
-      name: "",
-      img: "",
-      ingredient: [""],
-      measure: [""],
-      instruction: ""
+      name: ""
     }
   });
 
@@ -37,18 +29,10 @@ function RandomPlan() {
       setPlan({
         name: "",
         meal: {
-          name: "",
-          img: "",
-          ingredient: [""],
-          measure: [""],
-          instruction: ""
+          name: ""
         },
         cocktail: {
-          name: "",
-          img: "",
-          ingredient: [""],
-          measure: [""],
-          instruction: ""
+          name: ""
         }
       });
     });
