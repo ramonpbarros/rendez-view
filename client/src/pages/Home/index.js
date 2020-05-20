@@ -12,7 +12,7 @@ function Home() {
   });
 
   const changeText = (text) => {
-    if (planForm.name === ""){
+    if (planForm.name === "" || planForm.meal === "" || planForm.cocktail === ""){
       alert("Please Fill All Required Field")
     } else {
       setButtonText(text)
@@ -83,7 +83,7 @@ function Home() {
                 onChange={handleInputChange}
                 value={planForm.name}
                 id="inputPlanName"
-                placeholder="Enter planForm's name"
+                placeholder="Enter plan's name"
               />
             </div>
             <div className="form-group">
