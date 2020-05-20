@@ -15,7 +15,7 @@ function Signup() {
   const history = useHistory();
 
   if (isLoggedIn) {
-    return <Redirect to="/" />;
+    return <Redirect to="/profile" />;
   }
 
   const handleFormSubmit = (event) => {
