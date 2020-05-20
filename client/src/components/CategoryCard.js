@@ -20,6 +20,7 @@ const styles = {
   },
 };
 function CategoryCard(props) {
+  console.log(props.link);
   return (
     <div className="col-sm-3" style={styles.cardStyle}>
       <div className="card" style={styles.sectionStyles}>

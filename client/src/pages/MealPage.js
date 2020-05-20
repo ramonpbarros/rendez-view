@@ -100,9 +100,7 @@ function MealPage() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-4 ml-4">
-          <h1></h1>
-        </div>
+        <div className="col-sm-4 ml-4"></div>
       </div>
       <div className="row">
         <div className="col-sm-2"></div>

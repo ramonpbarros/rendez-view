@@ -36,9 +36,11 @@ function OneFoodCategory() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-4 ml-4">
+        <div className="col-sm-3"></div>
+        <div className="col-sm-6">
           <h1>{name} Recipes</h1>
         </div>
+        <div className="col-sm-3"></div>
       </div>
       <div className="row">{renderCategories()}</div>;
     </div>

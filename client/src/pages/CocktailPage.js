@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ChosenMeal from "../components/ChosenMeal";
+import RandomMealCard from "../components/RandomMealCard";
 import API from "../utils/API/Cocktail";
 
 import { useParams } from "react-router-dom";
@@ -56,7 +56,7 @@ function CocktailPage() {
   function renderCategories() {
     return state.map((item) => {
       return (
-        <ChosenMeal
+        <RandomMealCard
           key={item.m_id}
           name={item.m_name}
           image={item.m_image}
@@ -100,15 +100,13 @@ function CocktailPage() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-4 ml-4">
-          <h1></h1>
-        </div>
+        <div className="col-sm-4 ml-4"></div>
       </div>
       <div className="row">
-        <div className="col-sm-2"></div>
-        <div className="col-sm-8">{renderCategories()}</div>
+        <div className="col-sm-3"></div>
+        <div className="col-sm-6">{renderCategories()}</div>
 
-        <div className="col-sm-2"></div>
+        <div className="col-sm-3"></div>
       </div>
       ;
     </div>

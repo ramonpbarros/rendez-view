@@ -35,10 +35,12 @@ function OneCocktailCategory() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-12">
-          <h2>Drink Categories </h2>
+        <div className="col-sm-3"></div>
+        <div className="col-sm-6">
+          <h1>{decodeURIComponent(name)} Choices </h1>
         </div>
       </div>
+      <div className="col-sm-3"></div>
       <div className="row">{renderCategories()}</div>;
     </div>
   );

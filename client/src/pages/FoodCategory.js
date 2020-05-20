@@ -31,10 +31,12 @@ function FoodCategory() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-12">
-          <h2>Food Categories</h2>
+        <div className="col-sm-4"></div>
+        <div className="col-sm-6">
+          <h1>Food Categories</h1>
         </div>
       </div>
+      <div className="col-sm-2"></div>
       <div className="row">{renderCategories()}</div>;
     </div>
   );
