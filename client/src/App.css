@@ -46,6 +46,7 @@
   -webkit-box-shadow: 1px 1px 1px rgb(30, 30, 30);
   -khtml-box-shadow: 1px 1px 1px rgb(30, 30, 30) 30;
 }
+
 .btn-custom-homepage {
   background-color: white;
   color: #f54c4c;
@@ -56,6 +57,19 @@
 
 .btn-custom-homepage:hover {
   color: #f54c4c;
+  box-shadow: 1px 1px 1px rgb(30, 30, 30);
+  -moz-box-shadow: 1px 1px 1px rgb(30, 30, 30);
+  -webkit-box-shadow: 1px 1px 1px rgb(30, 30, 30);
+  -khtml-box-shadow: 1px 1px 1px rgb(30, 30, 30) 30;
+}
+
+.save-btn-custom {
+  background-color: #f54c4c;
+  color: white;
+}
+
+.save-btn-custom:hover {
+  color: white;
   box-shadow: 1px 1px 1px rgb(30, 30, 30);
   -moz-box-shadow: 1px 1px 1px rgb(30, 30, 30);
   -webkit-box-shadow: 1px 1px 1px rgb(30, 30, 30);
