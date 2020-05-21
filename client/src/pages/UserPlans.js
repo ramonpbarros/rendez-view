@@ -8,7 +8,6 @@ function UserPlans() {
 
   useEffect(() => {
     APIP.getAllPlans().then((res) => {
-      console.log(res.data);
       setUserPlans(
         res.data.map((res) => ({
           id: res._id,
