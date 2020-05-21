@@ -18,6 +18,7 @@ import Homepage from "./pages/Homepage";
 import FoodCategory from "./pages/FoodCategory";
 import CocktailCategory from "./pages/CocktailCategory";
 import RandomPlan from "./pages/RandomPlan";
+import UserPlans from "./pages/UserPlans"
 import OneFoodCategory from "./pages/OneFoodCategory";
 import OneCocktailCategory from "./pages/OneCocktailCategory";
 import MealPage from "./pages/MealPage";
@@ -30,23 +31,6 @@ function ProtectedRoute({ children, ...rest }) {
       {isLoggedIn ? children : <Redirect to="/homepage" />}
     </Route>
   );
-  /*
-  <Route
-      {...rest}
-      render={({ location }) =>
-        fakeAuth.isAuthenticated ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/login",
-              state: { from: location }
-            }}
-          />
-        )
-      }
-    />
-  */
 }
 
 function App() {
@@ -101,6 +85,10 @@ function App() {
             <ProtectedRoute exact path="/randomplan">
               <Navbar />
               <RandomPlan />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/userplans">
+              <Navbar />
+              <UserPlans />
             </ProtectedRoute>
           </Switch>
         </div>

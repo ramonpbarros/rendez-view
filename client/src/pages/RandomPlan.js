@@ -10,6 +10,15 @@ function RandomPlan() {
   const [randomDrink, setRandomDrink] = useState([]);
   const [randomMeal, setRandomMeal] = useState([]);
   const [planName, setPlanName]  = useState("");
+  const [buttonText, setButtonText] = useState("Save Plan");
+
+  const changeText = (text) => {
+    if (planName.name === ""){
+      alert("Please Fill The Required Field")
+    } else {
+      setButtonText(text)
+    }
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -49,7 +58,6 @@ function RandomPlan() {
 
   useEffect(() => {
     APIF.getRandom().then((res) => {
-      console.log(res.data.meals);
       setRandomMeal(
         res.data.meals.map((res) => ({
           m_id: res.idMeal,
@@ -101,7 +109,7 @@ function RandomPlan() {
     <React.Fragment>
       <div
         className="jumbotron container"
-        style={{ backgroundColor: "white", paddingBottom: 32 }}
+        style={{ backgroundColor: "white", paddingBottom: 0, marginBottom: 0 }}
       >
         <h1
           className="display-4"
@@ -133,8 +141,9 @@ function RandomPlan() {
                   type="submit"
                   value="Submit"
                   id="button-addon2"
+                  onClick={() => changeText("Plan Saved!")}
                 >
-                  Save Plan
+                  {buttonText}
                 </button>
               </div>
             </div>
@@ -148,7 +157,7 @@ function RandomPlan() {
           </button>
         </div>
       </div>
-      <div className="container mt-5">
+      <div className="container">
         <div className="row row-cols-1 row-cols-md-3">
           {randomDrink.map((item) => {
             return (
