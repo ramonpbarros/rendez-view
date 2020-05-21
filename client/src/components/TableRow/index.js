@@ -174,7 +174,7 @@ function TableRow(props) {
                         color="#f54c4c"
                         height={100}
                         width={100}
-                        timeout={3000} //3 secs
+                        timeout={9000} //3 secs
                       />
                     </div>
                   )}
@@ -187,7 +187,7 @@ function TableRow(props) {
                         color="#f54c4c"
                         height={100}
                         width={100}
-                        timeout={3000} //3 secs
+                        timeout={9000} //3 secs
                       />
                     </div>
                   )}
@@ -206,6 +206,7 @@ function TableRow(props) {
               </div>
             </div>
           </div>
+          <div className="modal-overlay"></div>
         </React.Fragment>
       )}
     </React.Fragment>
@@ -215,7 +216,7 @@ function TableRow(props) {
 function ModalCocktailDetails(props) {
   const { cocktail } = props;
   return (
-    <div>
+    <div style={{ zIndex: 3 }}>
       <img src={cocktail.image} alt="cocktailImg" style={{ width: "100%" }} />
       <hr />
       <h3>{cocktail.name}</h3>
