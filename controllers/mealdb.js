@@ -3,6 +3,22 @@ const axios = require("axios");
 
 const router = express.Router();
 
+router.get("/meal/:name", (req, res) => {
+  axios
+    .get("https://www.themealdb.com/api/json/v1/1/search.php?", {
+      params: { s: req.params.name },
+    })
+    .then((response) => {
+      return res.json(response.data);
+    })
+    .catch((error) => {
+      if (error.response) {
+        res.sendStatus(error.response.statusText);
+      } else {
+        res.sendStatus(500);
+      }
+    });
+});
 router.get("/randommeal", (req, res) => {
   axios
     .get("https://www.themealdb.com/api/json/v1/1/random.php")

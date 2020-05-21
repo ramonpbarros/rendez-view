@@ -1,6 +1,11 @@
 import axios from "axios";
 
 export default {
+  //search by name
+  getOneCocktail: function (name) {
+    return axios.get("/api/cocktail/" + name);
+  },
+
   getAlcoholCategories: function () {
     return axios.get("/api/cocktailcategory");
   },

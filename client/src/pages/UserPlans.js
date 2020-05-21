@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
-import API from "../utils/API/Cocktail";
-import APIF from "../utils/API/Food";
 import APIP from "../utils/API/Plan";
 import TableRow from "../components/TableRow"
+import Modal from "../components/Modal"
 
 function UserPlans() {
   const [userPlans, setUserPlans] = useState([]);
 
   useEffect(() => {
     APIP.getAllPlans().then((res) => {
-      console.log(res.data);
       setUserPlans(
         res.data.map((res) => ({
           id: res._id,
@@ -43,14 +41,17 @@ function UserPlans() {
         <table className="table">
           <thead style={{ backgroundColor: "#f54c4c", color: "white" }}>
             <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Drink</th>
-              <th scope="col">Meal</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
               <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
-            {userPlans.map((item) => {
+          </tbody>
+        </table>
+        <ul style={{paddingLeft:0}}>
+        {userPlans.map((item) => {
               return (
                 <TableRow 
                 key={item.id}
@@ -61,8 +62,7 @@ function UserPlans() {
                 />
               )
             })}
-          </tbody>
-        </table>
+        </ul>
       </div>
     </React.Fragment>
   );

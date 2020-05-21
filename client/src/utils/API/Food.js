@@ -1,6 +1,11 @@
 import axios from "axios";
 
 export default {
+  //search by name
+  getOneMeal: function (name) {
+    return axios.get("/api/meal/" + name);
+  },
+
   getFoodCategories: function () {
     return axios.get("api/foodcategory");
   },
