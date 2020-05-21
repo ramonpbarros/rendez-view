@@ -15,22 +15,35 @@ function TableRow(props) {
   }
 
   return (
-    <tr>
-      <td scope="row">
-        <strong>{props.name}</strong>
-      </td>
-      <td>{props.cocktail}</td>
-      <td>{props.meal}</td>
-      <td className="text-center">
-        <button className="btn btn-outline-success btn-sm mr-2">Details</button>
-        <button
-          className="btn btn-outline-danger btn-sm"
-          onClick={() => deletePlan(props.id)}
-        >
-          Remove
-        </button>
-      </td>
-    </tr>
+    <React.Fragment>
+      <li className="list-group-item">
+        <strong className="mr-1">Name:</strong>
+        {props.name}
+        <hr/>
+        <strong className="mr-1">Drink:</strong>
+        {props.cocktail}
+        <hr/>
+        <strong className="mr-1">Meal:</strong>
+        {props.meal}
+        <div className="mt-3">
+          <button
+            type="button"
+            className="btn btn-outline-success btn-sm mr-2"
+            data-toggle="modal"
+            data-target="#exampleModalLong"
+          >
+            Details
+          </button>
+          <button
+            className="btn btn-outline-danger btn-sm"
+            onClick={() => deletePlan(props.id)}
+          >
+            Remove
+          </button>
+        </div>
+      </li>
+      <hr/>
+    </React.Fragment>
   );
 }
 
