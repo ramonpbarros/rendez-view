@@ -10,6 +10,6 @@ export default {
   },
 
   deletePlan: (id) => {
-    return axios.delete("/api/plans" + id);
+    return axios.delete("/api/plans/" + id);
   }
 };

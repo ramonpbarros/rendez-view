@@ -54,6 +54,7 @@ function UserPlans() {
               return (
                 <TableRow 
                 key={item.id}
+                id={item.id}
                 name={item.name}
                 cocktail={item.cocktail}
                 meal={item.meal}
