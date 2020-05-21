@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Loader from "react-loader-spinner";
 import API from "../../utils/API/Plan";
 import APIC from "../../utils/API/Cocktail";
 import APIM from "../../utils/API/Food";
@@ -167,12 +168,28 @@ function TableRow(props) {
                   {cocktail ? (
                     <ModalCocktailDetails cocktail={cocktail} />
                   ) : (
-                    <p>Loading...</p>
+                    <div className="col text-center">
+                      <Loader
+                        type="Rings"
+                        color="#f54c4c"
+                        height={100}
+                        width={100}
+                        timeout={3000} //3 secs
+                      />
+                    </div>
                   )}
                   {meal ? (
                     <ModalMealDetails meal={meal} />
-                    ) : (
-                    <p>Loading...</p>
+                  ) : (
+                    <div className="col text-center">
+                      <Loader
+                        type="Rings"
+                        color="#f54c4c"
+                        height={100}
+                        width={100}
+                        timeout={3000} //3 secs
+                      />
+                    </div>
                   )}
                 </div>
                 <div className="modal-footer">
@@ -202,7 +219,7 @@ function ModalCocktailDetails(props) {
       <img src={cocktail.image} alt="cocktailImg" style={{ width: "100%" }} />
       <hr />
       <h3>{cocktail.name}</h3>
-      <hr/>
+      <hr />
       <p>
         <strong>Ingredients:</strong>
       </p>
@@ -229,7 +246,7 @@ function ModalCocktailDetails(props) {
         <strong>Instruction:</strong>
       </p>
       <p>{cocktail.instruction}</p>
-      <hr/>
+      <hr />
     </div>
   );
 }
@@ -241,7 +258,7 @@ function ModalMealDetails(props) {
       <img src={meal.image} alt="cocktailImg" style={{ width: "100%" }} />
       <hr />
       <h3>{meal.name}</h3>
-      <hr/>
+      <hr />
       <p>
         <strong>Ingredients:</strong>
       </p>
