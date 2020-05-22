@@ -66,7 +66,6 @@ function RandomMealCard(props) {
           <p>
             <strong>Instruction:</strong>
           </p>
-          {/* <p className="card-text">{props.instruction}</p> */}
           <ReadMoreReact text={props.instruction}
                 min={80}
                 ideal={100}
