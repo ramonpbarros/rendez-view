@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import APIP from "../utils/API/Plan";
 import TableRow from "../components/TableRow"
-import Modal from "../components/Modal"
 
 function UserPlans() {
   const [userPlans, setUserPlans] = useState([]);
