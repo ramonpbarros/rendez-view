@@ -1,0 +1,17 @@
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #f54c4c;
+  color: white;
+}
+
+.zoomIcon {
+  transition: transform 0.2s;
+}
+
+.zoomIcon:hover {
+  transform: scale(1.4);
+}

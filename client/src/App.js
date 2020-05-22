@@ -14,6 +14,7 @@ import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";
 import FoodCategory from "./pages/FoodCategory";
 import CocktailCategory from "./pages/CocktailCategory";
@@ -43,14 +44,17 @@ function App() {
             <ProtectedRoute exact path="/">
               <Navbar />
               <Home />
+              <Footer />
             </ProtectedRoute>
             <Route exact path="/login">
               <Navbar />
               <Login />
+              <Footer />
             </Route>
             <Route exact path="/signup">
               <Navbar />
               <Signup />
+              <Footer />
             </Route>
             <Route exact path="/homepage">
               <Homepage />
@@ -58,14 +62,17 @@ function App() {
             <ProtectedRoute exact path="/profile">
               <Navbar />
               <Profile />
+              <Footer />
             </ProtectedRoute>
             <ProtectedRoute exact path="/foodcategory">
               <Navbar />
               <FoodCategory />
+              <Footer />
             </ProtectedRoute>
             <ProtectedRoute exact path="/cocktailcategory">
               <Navbar />
               <CocktailCategory />
+              <Footer />
             </ProtectedRoute>
             <ProtectedRoute exact path="/moviecategory">
               <Navbar />
@@ -78,26 +85,32 @@ function App() {
             <ProtectedRoute exact path="/cocktailcategory/:name">
               <Navbar />
               <OneCocktailCategory />
+              <Footer />
             </ProtectedRoute>
             <ProtectedRoute exact path="/cocktailcategory/:name/:id">
               <Navbar />
               <CocktailPage />
+              <Footer />
             </ProtectedRoute>
             <ProtectedRoute exact path="/foodcategory/:name">
               <Navbar />
               <OneFoodCategory />
+              <Footer />
             </ProtectedRoute>
             <ProtectedRoute exact path="/foodcategory/:name/:id">
               <Navbar />
               <MealPage />
+              <Footer />
             </ProtectedRoute>
             <ProtectedRoute exact path="/randomplan">
               <Navbar />
               <RandomPlan />
+              <Footer />
             </ProtectedRoute>
             <ProtectedRoute exact path="/userplans">
               <Navbar />
               <UserPlans />
+              <Footer />
             </ProtectedRoute>
           </Switch>
         </div>
