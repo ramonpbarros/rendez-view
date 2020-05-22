@@ -1,9 +1,10 @@
 import React from "react";
+import ReadMoreReact from 'read-more-react';
 
 function RandomMealCard(props) {
   return (
     <div className="col mb-4 mt-5">
-      <div className="card  border-dark">
+      <div className="card h-100 border-dark">
         <img src={props.image} className="card-img-top" alt="mealImg" />
         <div className="card-body">
           <h5 className="card-title">
@@ -65,7 +66,12 @@ function RandomMealCard(props) {
           <p>
             <strong>Instruction:</strong>
           </p>
-          <p className="card-text">{props.instruction}</p>
+          {/* <p className="card-text">{props.instruction}</p> */}
+          <ReadMoreReact text={props.instruction}
+                min={80}
+                ideal={100}
+                max={500}
+                readMoreText={<a style={{color: "#f54c4c", textDecoration: "underline"}}>Read more</a>}/>
         </div>
       </div>
     </div>
