@@ -16,7 +16,6 @@ function Profile() {
     });
   }, [user]);
 
-
   return (
     <React.Fragment>
       <Jumbotron username={username} email={email} />
@@ -43,7 +42,7 @@ function Profile() {
                     fontSize: 40,
                     zIndex: 2,
                     position: "relative",
-                    textDecoration: "none"
+                    textDecoration: "none",
                   }}
                 >
                   Cocktails
@@ -55,7 +54,7 @@ function Profile() {
                   backgroundColor: "white",
                   zIndex: 2,
                   position: "relative",
-                  width: "70%"
+                  width: "70%",
                 }}
               />
               <div className="zoom1">
@@ -68,7 +67,7 @@ function Profile() {
                     fontSize: 16,
                     zIndex: 2,
                     textDecoration: "none",
-                    position: "relative"
+                    position: "relative",
                   }}
                 >
                   Search for recipes
@@ -97,7 +96,7 @@ function Profile() {
                     fontSize: 40,
                     zIndex: 2,
                     textDecoration: "none",
-                    position: "relative"
+                    position: "relative",
                   }}
                 >
                   Meals
@@ -109,7 +108,7 @@ function Profile() {
                   backgroundColor: "white",
                   zIndex: 2,
                   position: "relative",
-                  width: "70%"
+                  width: "70%",
                 }}
               />
               <div className="zoom1">
@@ -122,7 +121,7 @@ function Profile() {
                     fontSize: 16,
                     zIndex: 2,
                     textDecoration: "none",
-                    position: "relative"
+                    position: "relative",
                   }}
                 >
                   Search for recipes
@@ -143,7 +142,7 @@ function Profile() {
             <div className="card-img-overlay col text-center mt-5">
               <div className="zoom1">
                 <Link
-                  to="/"
+                  to="/moviecategory"
                   className="card-title"
                   style={{
                     color: "white",
@@ -151,7 +150,7 @@ function Profile() {
                     fontSize: 40,
                     zIndex: 2,
                     textDecoration: "none",
-                    position: "relative"
+                    position: "relative",
                   }}
                 >
                   Movies
@@ -163,12 +162,12 @@ function Profile() {
                   backgroundColor: "white",
                   zIndex: 2,
                   position: "relative",
-                  width: "70%"
+                  width: "70%",
                 }}
               />
               <div className="zoom1">
                 <Link
-                  to="/"
+                  to="/moviecategory"
                   className="card-title mt-3"
                   style={{
                     color: "white",
@@ -176,7 +175,7 @@ function Profile() {
                     fontSize: 16,
                     zIndex: 2,
                     textDecoration: "none",
-                    position: "relative"
+                    position: "relative",
                   }}
                 >
                   Search for movies
