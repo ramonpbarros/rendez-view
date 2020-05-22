@@ -18,12 +18,12 @@ import Homepage from "./pages/Homepage";
 import FoodCategory from "./pages/FoodCategory";
 import CocktailCategory from "./pages/CocktailCategory";
 import RandomPlan from "./pages/RandomPlan";
-import UserPlans from "./pages/UserPlans"
+import UserPlans from "./pages/UserPlans";
 import OneFoodCategory from "./pages/OneFoodCategory";
 import OneCocktailCategory from "./pages/OneCocktailCategory";
 import MealPage from "./pages/MealPage";
 import CocktailPage from "./pages/CocktailPage";
-
+import MovieCategory from "./pages/MovieCategory";
 function ProtectedRoute({ children, ...rest }) {
   const { isLoggedIn } = useAuth();
   return (
@@ -65,6 +65,10 @@ function App() {
             <ProtectedRoute exact path="/cocktailcategory">
               <Navbar />
               <CocktailCategory />
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/moviecategory">
+              <Navbar />
+              <MovieCategory />
             </ProtectedRoute>
             <ProtectedRoute exact path="/cocktailcategory/:name">
               <Navbar />
