@@ -5,8 +5,6 @@ import APIC from "../../utils/API/Cocktail";
 import APIM from "../../utils/API/Food";
 
 function TableRow(props) {
-  const [cocktailState, setCocktailState] = useState([]);
-  const [modalState, setModalState] = useState();
   const [cocktail, setCocktail] = useState();
   const [meal, setMeal] = useState();
   const [showModal, setShowModal] = useState(false);
