@@ -32,9 +32,21 @@ function MovieCategory() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-4"></div>
-        <div className="col-sm-6">
-          <h1>Movie Categories</h1>
+      <div
+          className="jumbotron container"
+          style={{
+            backgroundColor: "white",
+            paddingBottom: 0,
+            marginBottom: 0
+          }}
+        >
+          <h1
+            className="display-4"
+            style={{ color: "#f54c4c", fontWeight: "bold" }}
+          >
+            Movie Genres
+          </h1>
+          <hr className="my-4" />
         </div>
       </div>
       <div className="col-sm-2"></div>

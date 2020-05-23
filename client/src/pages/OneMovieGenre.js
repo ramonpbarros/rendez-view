@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CategoryCard from "../components/CategoryCard";
+import GenreCard from "../components/GenreCard";
 import API from "../utils/API/Movies";
 
 import { useParams } from "react-router-dom";
@@ -24,7 +24,7 @@ function OneMovieGenre() {
   function renderCategories() {
     return state.map((item) => {
       return (
-        <CategoryCard
+        <GenreCard
           key={item.id}
           name={item.name}
           image={item.image}
@@ -36,9 +36,21 @@ function OneMovieGenre() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-3"></div>
-        <div className="col-sm-6">
-          <h1>Our Recommendations</h1>
+      <div
+          className="jumbotron container"
+          style={{
+            backgroundColor: "white",
+            paddingBottom: 0,
+            marginBottom: 0
+          }}
+        >
+          <h1
+            className="display-4"
+            style={{ color: "#f54c4c", fontWeight: "bold" }}
+          >
+            Recommended
+          </h1>
+          <hr className="my-4" />
         </div>
         <div className="col-sm-3"></div>
       </div>

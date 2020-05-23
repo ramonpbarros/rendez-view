@@ -146,3 +146,13 @@
   color: #f54c4c;
   transform: scale(1.1);
 }
+
+.movieImg {
+  border: solid 1px black;
+  transition: transform 0.3s;
+}
+
+.movieImg:hover {
+  border: solid 1px black;
+  transform: scale(1.05);
+}

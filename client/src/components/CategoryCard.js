@@ -23,7 +23,6 @@ function CategoryCard(props) {
   return (
     <React.Fragment>
       <div className="col-sm-4" style={styles.cardStyle}>
-        {/* <div className="card" style={styles.sectionStyles}> */}
           <div className="thumbnail transparent-bg">
             <img
               style={styles.img}
@@ -34,7 +33,6 @@ function CategoryCard(props) {
           </div>
           <div className="card-body">
           </div>
-        {/* </div> */}
         <div className="card-img-overlay col text-center mt-5" >
               <div className="zoom1 mt-2">
                 <Link
