@@ -8,12 +8,12 @@ function Footer() {
       <a
         href="https://github.com/ramonpbarros/rendez-view"
         target="_blank"
-        className="fa zoomIcon mr-2 mt-2"
+        className="fa zoomIcon mr-2 mt-3"
         style={{color: "white"}}
       >
         <FaGithubSquare />
       </a>
-      <p className="mt-2">© Copyright</p>
+      <p className="mt-3">© Copyright</p>
     </footer>
   );
 }

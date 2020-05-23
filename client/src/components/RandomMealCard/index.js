@@ -1,5 +1,5 @@
 import React from "react";
-import ReadMoreReact from 'read-more-react';
+import ReadMoreReact from "read-more-react";
 
 function RandomMealCard(props) {
   return (
@@ -66,11 +66,13 @@ function RandomMealCard(props) {
           <p>
             <strong>Instruction:</strong>
           </p>
-          <ReadMoreReact text={props.instruction}
-                min={80}
-                ideal={100}
-                max={500}
-                readMoreText={<a style={{color: "#f54c4c", textDecoration: "underline"}}>Read more</a>}/>
+          <ReadMoreReact
+            text={props.instruction}
+            min={80}
+            ideal={100}
+            max={500}
+            readMoreText="Read More"
+          />
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Jumbotron(props) {
   return (
     <div
-      className="jumbotron"
+      className="jumbotron container"
       style={{ backgroundColor: "white", paddingBottom: 32 }}
     >
       <h1
@@ -25,7 +25,7 @@ function Jumbotron(props) {
       <div className="col text-center mt-5">
         <Link
           to="/userplans"
-          className="btn btn-custom zoom btn-lg m-4"
+          className="btn btn-custom zoom btn-lg"
           href="#"
           role="button"
         >

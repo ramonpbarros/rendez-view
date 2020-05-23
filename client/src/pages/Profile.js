@@ -27,7 +27,7 @@ function Profile() {
                 <img
                   src="https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                   alt="Lights"
-                  style={{ width: "100%", height: 305 }}
+                  style={{ width: "100%", height: 305, borderRadius: 5}}
                 />
               </a>
             </div>
@@ -42,7 +42,7 @@ function Profile() {
                     fontSize: 40,
                     zIndex: 2,
                     position: "relative",
-                    textDecoration: "none",
+                    textDecoration: "none"
                   }}
                 >
                   Cocktails
@@ -54,7 +54,7 @@ function Profile() {
                   backgroundColor: "white",
                   zIndex: 2,
                   position: "relative",
-                  width: "70%",
+                  width: "70%"
                 }}
               />
               <div className="zoom1">
@@ -67,7 +67,7 @@ function Profile() {
                     fontSize: 16,
                     zIndex: 2,
                     textDecoration: "none",
-                    position: "relative",
+                    position: "relative"
                   }}
                 >
                   Search for recipes
@@ -81,7 +81,7 @@ function Profile() {
                 <img
                   src="https://images.unsplash.com/photo-1533777324565-a040eb52facd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                   alt="Nature"
-                  style={{ width: "100%", height: 305 }}
+                  style={{ width: "100%", height: 305, borderRadius: 5}}
                 />
               </a>
             </div>
@@ -96,7 +96,7 @@ function Profile() {
                     fontSize: 40,
                     zIndex: 2,
                     textDecoration: "none",
-                    position: "relative",
+                    position: "relative"
                   }}
                 >
                   Meals
@@ -108,7 +108,7 @@ function Profile() {
                   backgroundColor: "white",
                   zIndex: 2,
                   position: "relative",
-                  width: "70%",
+                  width: "70%"
                 }}
               />
               <div className="zoom1">
@@ -121,7 +121,7 @@ function Profile() {
                     fontSize: 16,
                     zIndex: 2,
                     textDecoration: "none",
-                    position: "relative",
+                    position: "relative"
                   }}
                 >
                   Search for recipes
@@ -135,7 +135,7 @@ function Profile() {
                 <img
                   src="https://images.unsplash.com/photo-1572188863110-46d457c9234d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                   alt="Fjords"
-                  style={{ width: "100%", height: 305 }}
+                  style={{ width: "100%", height: 305, borderRadius: 5}}
                 />
               </a>
             </div>
@@ -150,7 +150,7 @@ function Profile() {
                     fontSize: 40,
                     zIndex: 2,
                     textDecoration: "none",
-                    position: "relative",
+                    position: "relative"
                   }}
                 >
                   Movies
@@ -162,7 +162,7 @@ function Profile() {
                   backgroundColor: "white",
                   zIndex: 2,
                   position: "relative",
-                  width: "70%",
+                  width: "70%"
                 }}
               />
               <div className="zoom1">
@@ -175,7 +175,7 @@ function Profile() {
                     fontSize: 16,
                     zIndex: 2,
                     textDecoration: "none",
-                    position: "relative",
+                    position: "relative"
                   }}
                 >
                   Search for movies
