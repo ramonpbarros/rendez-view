@@ -49,12 +49,10 @@ function App() {
             <Route exact path="/login">
               <Navbar />
               <Login />
-              <Footer />
             </Route>
             <Route exact path="/signup">
               <Navbar />
               <Signup />
-              <Footer />
             </Route>
             <Route exact path="/homepage">
               <Homepage />
