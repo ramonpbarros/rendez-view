@@ -16,12 +16,13 @@ function OneFoodCategory() {
           res.data.meals.map((res) => ({
             id: res.idMeal,
             name: res.strMeal,
-            image: res.strMealThumb,
+            image: res.strMealThumb
           }))
         )
       )
       .catch((err) => console.log(err));
   }, [name]);
+
   function renderCategories() {
     return state.map((item) => {
       return (
@@ -34,10 +35,11 @@ function OneFoodCategory() {
       );
     });
   }
+
   return (
     <div className="container">
       <div className="row">
-      <div
+        <div
           className="jumbotron container"
           style={{
             backgroundColor: "white",
@@ -58,7 +60,6 @@ function OneFoodCategory() {
           </h1>
           <hr className="my-4" />
         </div>
-        <div className="col-sm-3"></div>
       </div>
       <div className="row">{renderCategories()}</div>
     </div>
