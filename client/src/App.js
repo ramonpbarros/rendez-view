@@ -77,10 +77,12 @@ function App() {
             <ProtectedRoute exact path="/moviecategory">
               <Navbar />
               <MovieCategory />
+              <Footer />
             </ProtectedRoute>
             <ProtectedRoute exact path="/moviecategory/:id">
               <Navbar />
               <OneMovieGenre />
+              <Footer />
             </ProtectedRoute>
             <ProtectedRoute exact path="/cocktailcategory/:name">
               <Navbar />
@@ -109,8 +111,7 @@ function App() {
             </ProtectedRoute>
             <ProtectedRoute exact path="/userplans">
               <Navbar />
-              <UserPlans />
-              <Footer />
+              <UserPlans />              
             </ProtectedRoute>
           </Switch>
         </div>

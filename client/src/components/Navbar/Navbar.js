@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
-import "./style.css"
+import "./style.css";
 
 const createLink = ({ text, to, ...rest }) => {
   const className = "nav-link";

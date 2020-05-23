@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import CategoryCard from "../components/CategoryCard";
 import API from "../utils/API/Cocktail";
 import { useParams } from "react-router-dom";
+import { FaArrowCircleLeft } from "react-icons/fa";
 
 function OneCocktailCategory() {
   const { name } = useParams();
@@ -14,7 +16,7 @@ function OneCocktailCategory() {
           res.data.drinks.map((res) => ({
             id: res.idDrink,
             name: res.strDrink,
-            image: res.strDrinkThumb,
+            image: res.strDrinkThumb
           }))
         )
       )
@@ -37,13 +39,29 @@ function OneCocktailCategory() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-3"></div>
-        <div className="col-sm-6">
-          <h1>{decodeURIComponent(name)} Choices </h1>
+        <div
+          className="jumbotron container"
+          style={{
+            backgroundColor: "white",
+            paddingBottom: 0,
+            marginBottom: 0
+          }}
+        >
+          <div className="mr-3 zoom1 mt-3" style={{ float: "left" }}>
+            <Link style={{ color: "#f54c4c" }} to="/cocktailcategory">
+              <FaArrowCircleLeft size={40} />
+            </Link>
+          </div>
+          <h1
+            className="display-4"
+            style={{ color: "#f54c4c", fontWeight: "bold" }}
+          >
+            {decodeURIComponent(name)} Choices
+          </h1>
+          <hr className="my-4" />
         </div>
       </div>
-      <div className="col-sm-3"></div>
-      <div className="row">{renderCategories()}</div>;
+      <div className="row">{renderCategories()}</div>
     </div>
   );
 }

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import CategoryCard from "../components/CategoryCard";
 import API from "../utils/API/Cocktail";
 import { v4 as uuidv4 } from "uuid";
+import { FaArrowCircleLeft } from "react-icons/fa";
 
 function CocktailCategory() {
   const [state, setState] = useState([]);
@@ -11,7 +13,7 @@ function CocktailCategory() {
         setState(
           res.data.drinks.map((res) => ({
             id: uuidv4(),
-            name: res.strCategory,
+            name: res.strCategory
           }))
         )
       )
@@ -81,13 +83,29 @@ function CocktailCategory() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-4"></div>
-        <div className="col-sm-6">
-          <h1>Drink Categories</h1>
+        <div
+          className="jumbotron container"
+          style={{
+            backgroundColor: "white",
+            paddingBottom: 0,
+            marginBottom: 0
+          }}
+        >
+          <div className="mr-3 zoom1 mt-3" style={{ float: "left" }}>
+            <Link style={{ color: "#f54c4c" }} to="/profile">
+              <FaArrowCircleLeft size={40} />
+            </Link>
+          </div>
+          <h1
+            className="display-4"
+            style={{ color: "#f54c4c", fontWeight: "bold" }}
+          >
+            Drink Categories
+          </h1>
+          <hr className="my-4" />
         </div>
-        <div className="col-sm-2"></div>
       </div>
-      <div className="row">{renderCategories()}</div>;
+      <div className="row">{renderCategories()}</div>
     </div>
   );
 }

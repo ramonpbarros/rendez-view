@@ -48,7 +48,7 @@ function MealPage() {
           m_measure13: res.strMeasure13,
           m_measure14: res.strMeasure14,
           m_measure15: res.strMeasure15,
-          m_measure16: res.strMeasure16,
+          m_measure16: res.strMeasure16
         }))
       );
     });
@@ -98,18 +98,9 @@ function MealPage() {
     });
   }
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-sm-4 ml-4"></div>
-      </div>
-      <div className="row">
-        <div className="col-sm-2"></div>
-        <div className="col-sm-8">{renderCategories()}</div>
-
-        <div className="col-sm-2"></div>
-      </div>
-      ;
-    </div>
+    <React.Fragment>
+      <div>{renderCategories()}</div>
+    </React.Fragment>
   );
 }
 export default MealPage;

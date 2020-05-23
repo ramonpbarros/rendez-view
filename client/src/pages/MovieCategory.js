@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import CategoryCard from "../components/CategoryCard";
 import API from "../utils/API/Movies";
+import { FaArrowCircleLeft } from "react-icons/fa";
+
 function MovieCategory() {
   const [state, setState] = useState([]);
   useEffect(() => {
@@ -11,7 +14,7 @@ function MovieCategory() {
             id: res.id,
             name: res.name,
             image:
-              "https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg",
+              "https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg"
           }))
         )
       )
@@ -32,13 +35,30 @@ function MovieCategory() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-4"></div>
-        <div className="col-sm-6">
-          <h1>Movie Categories</h1>
+        <div
+          className="jumbotron container"
+          style={{
+            backgroundColor: "white",
+            paddingBottom: 0,
+            marginBottom: 0
+          }}
+        >
+          <div className="mr-3 zoom1 mt-3" style={{ float: "left" }}>
+            <Link style={{ color: "#f54c4c" }} to="/profile">
+              <FaArrowCircleLeft size={40} />
+            </Link>
+          </div>
+          <h1
+            className="display-4"
+            style={{ color: "#f54c4c", fontWeight: "bold" }}
+          >
+            Movie Genres
+          </h1>
+          <hr className="my-4" />
         </div>
       </div>
       <div className="col-sm-2"></div>
-      <div className="row">{renderCategories()}</div>;
+      <div className="row">{renderCategories()}</div>
     </div>
   );
 }
