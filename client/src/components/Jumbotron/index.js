@@ -40,7 +40,7 @@ function Jumbotron(props) {
           Random Plan
         </Link>
         <Link
-          to="/"
+          to="/createplan"
           className="btn btn-custom zoom btn-lg"
           href="#"
           role="button"
