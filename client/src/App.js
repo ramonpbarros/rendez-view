@@ -43,7 +43,7 @@ function App() {
           <Switch>
             <ProtectedRoute exact path="/">
               <Navbar />
-              <Home />
+              <Homepage />
               <Footer />
             </ProtectedRoute>
             <Route exact path="/login">
