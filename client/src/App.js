@@ -62,6 +62,11 @@ function App() {
               <Profile />
               <Footer />
             </ProtectedRoute>
+            <ProtectedRoute exact path="/createplan">
+              <Navbar />
+              <Home />
+              <Footer />
+            </ProtectedRoute>
             <ProtectedRoute exact path="/foodcategory">
               <Navbar />
               <FoodCategory />
