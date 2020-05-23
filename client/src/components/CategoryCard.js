@@ -4,40 +4,66 @@ import { Link } from "react-router-dom";
 const styles = {
   sectionStyles: {
     width: "18rem",
-    height: "90%",
+    height: "90%"
   },
   cardStyle: {
-    margin: "20px",
+    margin: "0px"
   },
   img: {
     width: "100%",
     height: "65%",
-    margin: "0,auto",
+    margin: "0,auto"
   },
   title: {
     fontSize: "142%",
-    width: "100%",
-  },
+    width: "100%"
+  }
 };
 function CategoryCard(props) {
   return (
-    <div className="col-sm-3" style={styles.cardStyle}>
-      <div className="card" style={styles.sectionStyles}>
-        <img
-          style={styles.img}
-          src={props.image}
-          className="card-img-top"
-          alt={props.name}
-        />
-        <div className="card-body">
-          <Link to={props.link}>
-            <h2 className="card-text" style={styles.title}>
-              {props.name}
-            </h2>
-          </Link>
-        </div>
+    <React.Fragment>
+      <div className="col-sm-4" style={styles.cardStyle}>
+        {/* <div className="card" style={styles.sectionStyles}> */}
+          <div className="thumbnail transparent-bg">
+            <img
+              style={styles.img}
+              src={props.image}
+              className="card-img-top"
+              alt={props.name}
+            />
+          </div>
+          <div className="card-body">
+          </div>
+        {/* </div> */}
+        <div className="card-img-overlay col text-center mt-5" >
+              <div className="zoom1 mt-2">
+                <Link
+                  to={props.link}
+                  className="card-title"
+                  style={{
+                    color: "white",
+                    fontWeight: "bold",
+                    fontSize: 35,
+                    zIndex: 2,
+                    position: "relative",
+                    textDecoration: "none"
+                  }}
+                >
+                  {props.name}
+                </Link>
+              </div>
+              <hr
+                className="my-2"
+                style={{
+                  backgroundColor: "white",
+                  zIndex: 2,
+                  position: "relative",
+                  width: "70%"
+                }}
+              />
+            </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 export default CategoryCard;

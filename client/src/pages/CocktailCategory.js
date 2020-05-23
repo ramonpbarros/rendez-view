@@ -11,7 +11,7 @@ function CocktailCategory() {
         setState(
           res.data.drinks.map((res) => ({
             id: uuidv4(),
-            name: res.strCategory,
+            name: res.strCategory
           }))
         )
       )
@@ -81,11 +81,22 @@ function CocktailCategory() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-4"></div>
-        <div className="col-sm-6">
-          <h1>Drink Categories</h1>
+        <div
+          className="jumbotron container"
+          style={{
+            backgroundColor: "white",
+            paddingBottom: 0,
+            marginBottom: 0
+          }}
+        >
+          <h1
+            className="display-4"
+            style={{ color: "#f54c4c", fontWeight: "bold" }}
+          >
+            Drink Categories
+          </h1>
+          <hr className="my-4" />
         </div>
-        <div className="col-sm-2"></div>
       </div>
       <div className="row">{renderCategories()}</div>;
     </div>

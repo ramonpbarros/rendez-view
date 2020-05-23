@@ -23,13 +23,11 @@ function Profile() {
         <div className="row mx-lg-n5">
           <div className="col-md-4 mb-4">
             <div className="thumbnail transparent-bg">
-              <a href="/w3images/lights.jpg">
                 <img
                   src="https://images.unsplash.com/photo-1509669803555-fd5edd8d5a41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                   alt="Lights"
-                  style={{ width: "100%", height: 305, borderRadius: 5}}
+                  style={{ width: "100%", height: 305, borderRadius: 5 }}
                 />
-              </a>
             </div>
             <div className="card-img-overlay col text-center mt-5">
               <div className="zoom1">
@@ -75,15 +73,13 @@ function Profile() {
               </div>
             </div>
           </div>
-          <div className="col-md-4 mb-4 ">
+          <div className="col-md-4 mb-4">
             <div className="thumbnail transparent-bg">
-              <a href="/w3images/nature.jpg">
                 <img
                   src="https://images.unsplash.com/photo-1533777324565-a040eb52facd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                   alt="Nature"
-                  style={{ width: "100%", height: 305, borderRadius: 5}}
+                  style={{ width: "100%", height: 305, borderRadius: 5 }}
                 />
-              </a>
             </div>
             <div className="card-img-overlay col text-center mt-5">
               <div className="zoom1">
@@ -130,14 +126,12 @@ function Profile() {
             </div>
           </div>
           <div className="col-md-4 mb-4">
-            <div className="thumbnail transparent-bg">
-              <a href="/w3images/fjords.jpg">
+            <div className="thumbnail transparent-bg">              
                 <img
                   src="https://images.unsplash.com/photo-1572188863110-46d457c9234d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                   alt="Fjords"
-                  style={{ width: "100%", height: 305, borderRadius: 5}}
+                  style={{ width: "100%", height: 305, borderRadius: 5 }}
                 />
-              </a>
             </div>
             <div className="card-img-overlay col text-center mt-5">
               <div className="zoom1">
