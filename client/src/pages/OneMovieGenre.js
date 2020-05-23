@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import GenreCard from "../components/GenreCard";
 import API from "../utils/API/Movies";
-
+import { FaArrowCircleLeft } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 
 function OneMovieGenre() {
@@ -44,6 +45,11 @@ function OneMovieGenre() {
             marginBottom: 0
           }}
         >
+          <div className="mr-3 zoom1" style={{ float: "left" }}>
+            <Link style={{ color: "#f54c4c" }} to="/moviecategory">
+              <FaArrowCircleLeft size={58} />
+            </Link>
+          </div>
           <h1
             className="display-4"
             style={{ color: "#f54c4c", fontWeight: "bold" }}
@@ -54,7 +60,7 @@ function OneMovieGenre() {
         </div>
         <div className="col-sm-3"></div>
       </div>
-      <div className="row">{renderCategories()}</div>;
+      <div className="row">{renderCategories()}</div>
     </div>
   );
 }

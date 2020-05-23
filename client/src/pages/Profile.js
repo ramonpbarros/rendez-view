@@ -43,7 +43,7 @@ function Profile() {
                     textDecoration: "none"
                   }}
                 >
-                  Cocktails
+                  Drinks
                 </Link>
               </div>
               <hr

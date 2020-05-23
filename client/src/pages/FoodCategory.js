@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import CategoryCard from "../components/CategoryCard";
 import API from "../utils/API/Food";
+import { FaArrowCircleLeft } from "react-icons/fa";
+
 function FoodCategory() {
   const [state, setState] = useState([]);
   useEffect(() => {
@@ -10,7 +13,7 @@ function FoodCategory() {
           res.data.categories.map((res) => ({
             id: res.idCategory,
             name: res.strCategory,
-            image: res.strCategoryThumb,
+            image: res.strCategoryThumb
           }))
         )
       )
@@ -31,7 +34,7 @@ function FoodCategory() {
   return (
     <div className="container">
       <div className="row">
-      <div
+        <div
           className="jumbotron container"
           style={{
             backgroundColor: "white",
@@ -39,6 +42,11 @@ function FoodCategory() {
             marginBottom: 0
           }}
         >
+          <div className="mr-3 zoom1" style={{ float: "left" }}>
+            <Link style={{ color: "#f54c4c" }} to="/profile">
+              <FaArrowCircleLeft size={58} />
+            </Link>
+          </div>
           <h1
             className="display-4"
             style={{ color: "#f54c4c", fontWeight: "bold" }}
@@ -49,7 +57,7 @@ function FoodCategory() {
         </div>
       </div>
       <div className="col-sm-2"></div>
-      <div className="row">{renderCategories()}</div>;
+      <div className="row">{renderCategories()}</div>
     </div>
   );
 }

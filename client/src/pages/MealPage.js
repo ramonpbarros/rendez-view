@@ -108,7 +108,6 @@ function MealPage() {
 
         <div className="col-sm-2"></div>
       </div>
-      ;
     </div>
   );
 }
