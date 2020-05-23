@@ -68,7 +68,7 @@ function Profile() {
                     position: "relative"
                   }}
                 >
-                  Search for recipes
+                  Search by category
                 </Link>
               </div>
             </div>
@@ -120,7 +120,7 @@ function Profile() {
                     position: "relative"
                   }}
                 >
-                  Search for recipes
+                  Search by category
                 </Link>
               </div>
             </div>
@@ -172,7 +172,7 @@ function Profile() {
                     position: "relative"
                   }}
                 >
-                  Search for movies
+                  Search by genre
                 </Link>
               </div>
             </div>
