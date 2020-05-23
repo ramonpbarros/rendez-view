@@ -16,13 +16,13 @@ function ChosenMeal(props) {
           marginBottom: 0
         }}
       >
-        <div className="mr-3 zoom1" style={{ float: "left" }}>
+        <div className="mr-1 zoom1 mt-2" style={{ float: "left" }}>
           <button
             style={{ color: "#f54c4c" }}
             onClick={goBack}
             className="btn"
           >
-            <FaArrowCircleLeft size={58} />
+            <FaArrowCircleLeft size={40} />
           </button>
         </div>
         <h1

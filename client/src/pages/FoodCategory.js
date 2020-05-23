@@ -42,9 +42,9 @@ function FoodCategory() {
             marginBottom: 0
           }}
         >
-          <div className="mr-3 zoom1" style={{ float: "left" }}>
+          <div className="mr-3 zoom1 mt-3" style={{ float: "left" }}>
             <Link style={{ color: "#f54c4c" }} to="/profile">
-              <FaArrowCircleLeft size={58} />
+              <FaArrowCircleLeft size={40} />
             </Link>
           </div>
           <h1
