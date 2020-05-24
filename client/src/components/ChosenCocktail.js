@@ -1,6 +1,5 @@
 import React from "react";
 import { FaArrowCircleLeft } from "react-icons/fa";
-
 function ChosenMeal(props) {
   function goBack() {
     window.history.back();
@@ -13,15 +12,11 @@ function ChosenMeal(props) {
         style={{
           backgroundColor: "white",
           paddingBottom: 0,
-          marginBottom: 0
+          marginBottom: 0,
         }}
       >
         <div className="mr-1 zoom1 mt-2" style={{ float: "left" }}>
-          <button
-            style={{ color: "#f54c4c" }}
-            onClick={goBack}
-            className="btn"
-          >
+          <button style={{ color: "#f54c4c" }} onClick={goBack} className="btn">
             <FaArrowCircleLeft size={40} />
           </button>
         </div>

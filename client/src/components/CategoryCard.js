@@ -4,20 +4,21 @@ import { Link } from "react-router-dom";
 const styles = {
   sectionStyles: {
     width: "18rem",
-    height: "90%"
+    height: "90%",
   },
   cardStyle: {
-    margin: "0px"
+    margin: "0px",
   },
   img: {
     width: "100%",
     height: "65%",
-    margin: "0,auto"
+    margin: "0,auto",
+    maxHeight: "200px",
   },
   title: {
     fontSize: "142%",
-    width: "100%"
-  }
+    width: "100%",
+  },
 };
 
 function CategoryCard(props) {
@@ -44,7 +45,7 @@ function CategoryCard(props) {
                 fontSize: 35,
                 zIndex: 2,
                 position: "relative",
-                textDecoration: "none"
+                textDecoration: "none",
               }}
             >
               {props.name}
@@ -56,7 +57,7 @@ function CategoryCard(props) {
               backgroundColor: "white",
               zIndex: 2,
               position: "relative",
-              width: "70%"
+              width: "70%",
             }}
           />
         </div>

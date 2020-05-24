@@ -13,7 +13,7 @@ function FoodCategory() {
           res.data.categories.map((res) => ({
             id: res.idCategory,
             name: res.strCategory,
-            image: res.strCategoryThumb
+            image: res.strCategoryThumb,
           }))
         )
       )
@@ -21,6 +21,67 @@ function FoodCategory() {
   }, []);
   function renderCategories() {
     return state.map((item) => {
+      switch (item.name) {
+        case "Beef":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/ursuup1487348423.jpg";
+          break;
+        case "Chicken":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/xqusqy1487348868.jpg";
+          break;
+        case "Dessert":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/rpvptu1511641092.jpg";
+          break;
+        case "Lamb":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/yuwtuu1511295751.jpg";
+          break;
+        case "Miscellaneous":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/uuyrrx1487327597.jpg";
+          break;
+        case "Pasta":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/vvtvtr1511180578.jpg";
+          break;
+        case "Pork":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/h3ijwo1581013377.jpg";
+          break;
+        case "Seafood":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/xxyupu1468262513.jpg";
+          break;
+        case "Side":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/xvrrux1511783685.jpg";
+          break;
+        case "Starter":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/stpuws1511191310.jpg";
+          break;
+        case "Vegan":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg";
+          break;
+        case "Vegetarian":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/ysqrus1487425681.jpg";
+          break;
+        case "Breakfast":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/1550440197.jpg";
+          break;
+        case "Goat":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/cuio7s1555492979.jpg";
+          break;
+        default:
+          item.image =
+            "https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg";
+      }
       return (
         <CategoryCard
           key={item.id}
@@ -39,7 +100,7 @@ function FoodCategory() {
           style={{
             backgroundColor: "white",
             paddingBottom: 0,
-            marginBottom: 0
+            marginBottom: 0,
           }}
         >
           <div className="mr-3 zoom1 mt-3" style={{ float: "left" }}>

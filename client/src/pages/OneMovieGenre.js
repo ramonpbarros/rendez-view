@@ -29,7 +29,7 @@ function OneMovieGenre() {
           key={item.id}
           name={item.name}
           image={item.image}
-          link={`/moviecategory/${id}/${item.name}`}
+          link={`/moviecategory/${id}/${item.id}`}
         />
       );
     });
@@ -37,12 +37,12 @@ function OneMovieGenre() {
   return (
     <div className="container">
       <div className="row">
-      <div
+        <div
           className="jumbotron container"
           style={{
             backgroundColor: "white",
             paddingBottom: 0,
-            marginBottom: 0
+            marginBottom: 0,
           }}
         >
           <div className="mr-3 zoom1 mt-3" style={{ float: "left" }}>

@@ -9,4 +9,7 @@ export default {
   getOneMovie: function (name) {
     return axios.get("/api/moviecategory/:id" + name);
   },
+  getOneMovie: function (id) {
+    return axios.get("/api/moviecategory/:id/" + id);
+  },
 };
