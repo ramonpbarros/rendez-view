@@ -26,6 +26,7 @@ import MealPage from "./pages/MealPage";
 import CocktailPage from "./pages/CocktailPage";
 import MovieCategory from "./pages/MovieCategory";
 import OneMovieGenre from "./pages/OneMovieGenre";
+import MoviePage from "./pages/MoviePage";
 function ProtectedRoute({ children, ...rest }) {
   const { isLoggedIn } = useAuth();
   return (
@@ -87,6 +88,11 @@ function App() {
               <OneMovieGenre />
               <Footer />
             </ProtectedRoute>
+            <ProtectedRoute exact path="/moviecategory/:id/:id">
+              <Navbar />
+              <MoviePage />
+              <Footer />
+            </ProtectedRoute>
             <ProtectedRoute exact path="/cocktailcategory/:name">
               <Navbar />
               <OneCocktailCategory />
@@ -114,7 +120,7 @@ function App() {
             </ProtectedRoute>
             <ProtectedRoute exact path="/userplans">
               <Navbar />
-              <UserPlans />              
+              <UserPlans />
             </ProtectedRoute>
           </Switch>
         </div>
