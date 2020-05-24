@@ -74,6 +74,13 @@ function FoodCategory() {
           item.image =
             "https://www.themealdb.com/images/media/meals/1550440197.jpg";
           break;
+        case "Goat":
+          item.image =
+            "https://www.themealdb.com/images/media/meals/cuio7s1555492979.jpg";
+          break;
+        default:
+          item.image =
+            "https://image.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg";
       }
       return (
         <CategoryCard

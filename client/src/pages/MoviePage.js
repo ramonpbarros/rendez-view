@@ -13,7 +13,7 @@ function MoviePage() {
   useEffect(() => {
     API.getOneMovie(id).then((res) => {
       setTitle(res.data.original_title);
-      setImage(` http://image.tmdb.org/t/p/w185/${res.data.poster_path}`);
+      setImage(` http://image.tmdb.org/t/p/w185/${res.data.backdrop_path}`);
       setPlot(res.data.overview);
     });
   }, []);
