@@ -5,18 +5,18 @@ function RandomMovieCard(props) {
     <div className="col mb-4 mt-5">
       <div className="card h-100 border-dark">
         <img
-          src="https://images.unsplash.com/photo-1485115905815-74a5c9fda2f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+          src={props.poster}
           className="card-img-top"
           alt="mealImg"
           height="348"
         />
         <div className="card-body">
           <h5 className="card-title">
-            <strong>Movies</strong>
+            <strong>{props.title}</strong>
           </h5>
           <hr />
           <p>
-            <strong>Coming Soon!</strong>
+            <strong>{props.plot}</strong>
           </p>
         </div>
       </div>

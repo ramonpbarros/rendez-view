@@ -62,7 +62,7 @@ router.get("/moviecategory/:id/:id", (req, res) => {
 router.get("/popularmovie", (req, res) => {
   axios
     .get(
-      "https://api.themoviedb.org/3/discover/movie?api_key=97607772fc281d59cc4416a0db38656c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=2"
+      "https://api.themoviedb.org/3/discover/movie?api_key=97607772fc281d59cc4416a0db38656c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1"
     )
     .then((response) => {
       return res.json(response.data);

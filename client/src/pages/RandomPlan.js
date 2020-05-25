@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import API from "../utils/API/Cocktail";
 import APIF from "../utils/API/Food";
 // import APIP from "../utils/API/Plan";
-import APIU from "../utils/API"
-import APIM from "../utils/API/Movies"
+import APIU from "../utils/API";
+import APIM from "../utils/API/Movies";
 import RandomDrinkCard from "../components/RandomDrinkCard";
 import RandomMealCard from "../components/RandomMealCard";
 import RandomMovieCard from "../components/RandomMovieCard";
@@ -11,15 +11,15 @@ import RandomMovieCard from "../components/RandomMovieCard";
 function RandomPlan() {
   const [randomDrink, setRandomDrink] = useState([]);
   const [randomMeal, setRandomMeal] = useState([]);
-  const [randomMovie, setRandomMovie] = useState ([])
-  const [planName, setPlanName]  = useState("");
+  const [randomMovie, setRandomMovie] = useState([]);
+  const [planName, setPlanName] = useState("");
   const [buttonText, setButtonText] = useState("Save Plan");
 
   const changeText = (text) => {
-    if (planName.name === ""){
-      alert("Please Fill The Required Field")
+    if (planName.name === "") {
+      alert("Please Fill The Required Field");
     } else {
-      setButtonText(text)
+      setButtonText(text);
     }
   };
 
@@ -30,15 +30,21 @@ function RandomPlan() {
       meal: randomMeal[0].m_name,
       cocktail: randomDrink[0].name
     }).then((res) => {
-      setPlanName("")
+      setPlanName("");
     });
   };
 
   useEffect(() => {
     APIM.getPopularMovie().then((res) => {
-      console.log(res.data)
-    })
-  })
+      console.log(res.data.results[0]);
+      setRandomMovie({
+        id: res.data.results[randomNum].id,
+        title: res.data.results[randomNum].original_title,
+        plot: res.data.results[randomNum].overview,
+        poster: res.data.results[randomNum].poster_path
+      });
+    });
+  }, []);
 
   useEffect(() => {
     API.getRandom().then((res) => {
@@ -160,7 +166,7 @@ function RandomPlan() {
           <button
             onClick={refreshPage}
             className="btn btn-custom zoom btn-lg m-4"
-            href="#" 
+            href="#"
           >
             Try Again!
           </button>
@@ -232,11 +238,19 @@ function RandomPlan() {
               />
             );
           })}
-          <RandomMovieCard />
+          <RandomMovieCard
+            key={randomMovie.id}
+            title={randomMovie.title}
+            plot={randomMovie.plot}
+            poster={` http://image.tmdb.org/t/p/w185/${randomMovie.poster}`}
+          />
         </div>
       </div>
     </React.Fragment>
   );
 }
+
+const randomNum = Math.floor(Math.random() * Math.floor(19));
+console.log(randomNum);
 
 export default RandomPlan;
