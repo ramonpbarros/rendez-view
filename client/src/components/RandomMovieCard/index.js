@@ -1,27 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "../../utils/API/Movies";
+import { useParams } from "react-router-dom";
 
 function RandomMovieCard(props) {
+  const [trailer, setTrailer] = useState();
+
+  useEffect(() => {
+    API.getMovieTrailer(props.id).then((res) => {
+      // console.log(res.data.results[0].key);
+      setTrailer(`https://www.youtube.com/watch?v=${res.data.results[0].key}`);
+    });
+  }, []);
+
   return (
     <div className="col mb-4 mt-5">
       <div className="card h-100 border-dark">
-        <img src={props.image} className="card-img-top" alt="movieImg" height="348" />
+        <img src={props.poster} className="card-img-top" alt="mealImg" />
         <div className="card-body">
           <h5 className="card-title">
-          <strong>{props.title}</strong>
+            <strong>{props.title}</strong>
           </h5>
           <hr />
-          <p className="card-text">
-            {props.measure1} {props.plot}
+          <p>
+            <strong>Plot:</strong>
           </p>
-          <p className="card-text">
-            {props.measure2} {props.time}
-          </p>
-          <p className="card-text">
-            {props.measure3} {props.date}
-          </p>
-          <p className="card-text">
-            {props.measure4} {props.link}
-          </p>
+          <p>{props.plot}</p>
+          <a href={trailer} target="_blank">
+            View trailer
+          </a>
         </div>
       </div>
     </div>

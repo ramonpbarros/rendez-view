@@ -1,6 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 const router = express.Router();
+
 router.get("/moviecategory", (req, res) => {
   axios
     .get(
@@ -18,6 +19,7 @@ router.get("/moviecategory", (req, res) => {
       }
     });
 });
+
 router.get("/moviecategory/:id", (req, res) => {
   axios
     .get(
@@ -27,7 +29,6 @@ router.get("/moviecategory/:id", (req, res) => {
     )
     .then((response) => {
       return res.json(response.data);
-      // console.log(response.data);
     })
     .catch((error) => {
       if (error.response) {
@@ -37,14 +38,13 @@ router.get("/moviecategory/:id", (req, res) => {
       }
     });
 });
+
 router.get("/moviecategory/:id/:id", (req, res) => {
-  console.log(req.params.id);
   axios
     .get(
       `https://api.themoviedb.org/3/movie/${req.params.id}?api_key=97607772fc281d59cc4416a0db38656c&language=en-US`
     )
     .then((response) => {
-      console.log(response.data);
       return res.json(response.data);
     })
     .catch((error) => {
@@ -55,4 +55,40 @@ router.get("/moviecategory/:id/:id", (req, res) => {
       }
     });
 });
+
+router.get("/popularmovie", (req, res) => {
+  axios
+    .get(
+      "https://api.themoviedb.org/3/movie/now_playing?api_key=97607772fc281d59cc4416a0db38656c&language=en-US&page=1"
+    )
+    .then((response) => {
+      return res.json(response.data);
+    })
+    .catch((error) => {
+      if (error.response) {
+        res.sendStatus(error.response.statusText);
+      } else {
+        res.sendStatus(500);
+      }
+    });
+});
+
+router.get("/movietrailer/:id", (req, res) => {
+  console.log(req.params.id);
+  axios
+    .get(
+      `https://api.themoviedb.org/3/movie/${req.params.id}/videos?api_key=97607772fc281d59cc4416a0db38656c&language=en-US`
+    )
+    .then((response) => {
+      return res.json(response.data);
+    })
+    .catch((error) => {
+      if (error.response) {
+        res.sendStatus(error.response.statusText);
+      } else {
+        res.sendStatus(500);
+      }
+    });
+});
+
 module.exports = router;
