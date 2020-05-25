@@ -14,13 +14,11 @@ function Jumbotron(props) {
         Hello, {props.username}!
       </h1>
       <p className="lead">
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
+        Welcome to Rendez-View!
       </p>
       <hr className="my-4" />
       <p>
-        It uses utility classes for typography and spacing to space content out
-        within the larger container {props.email}.
+        If the following is not your email please log out and log in again {props.email}.
       </p>
       <div className="col text-center mt-5">
         <Link
