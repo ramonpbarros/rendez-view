@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/API/Movies";
-import { useParams } from "react-router-dom";
 
 function RandomMovieCard(props) {
   const [trailer, setTrailer] = useState();
 
   useEffect(() => {
-    API.getMovieTrailer(props.id).then((res) => {
-      // console.log(res.data.results[0].key);
-      setTrailer(`https://www.youtube.com/watch?v=${res.data.results[0].key}`);
-    });
+    if (props.id !== undefined) {
+      API.getMovieTrailer(props.id).then((res) => {
+        setTrailer(
+          `https://www.youtube.com/watch?v=${res.data.results[0].key}`
+        );
+      });
+    }
   }, []);
 
   return (
