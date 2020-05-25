@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API/Cocktail";
 import APIF from "../utils/API/Food";
-// import APIP from "../utils/API/Plan";
 import APIU from "../utils/API";
 import APIM from "../utils/API/Movies";
 import RandomDrinkCard from "../components/RandomDrinkCard";
@@ -251,6 +250,5 @@ function RandomPlan() {
 }
 
 const randomNum = Math.floor(Math.random() * Math.floor(19));
-console.log(randomNum);
 
 export default RandomPlan;
