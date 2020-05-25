@@ -12,4 +12,7 @@ export default {
   getOneMovie: function (id) {
     return axios.get("/api/moviecategory/:id/" + id);
   },
+  getPopularMovie: function () {
+    return axios.get("/api/popularmovie");
+  },
 };

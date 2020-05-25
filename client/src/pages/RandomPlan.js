@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API/Cocktail";
 import APIF from "../utils/API/Food";
-import APIP from "../utils/API/Plan";
+// import APIP from "../utils/API/Plan";
 import APIU from "../utils/API"
+import APIM from "../utils/API/Movies"
 import RandomDrinkCard from "../components/RandomDrinkCard";
 import RandomMealCard from "../components/RandomMealCard";
 import RandomMovieCard from "../components/RandomMovieCard";
@@ -10,6 +11,7 @@ import RandomMovieCard from "../components/RandomMovieCard";
 function RandomPlan() {
   const [randomDrink, setRandomDrink] = useState([]);
   const [randomMeal, setRandomMeal] = useState([]);
+  const [randomMovie, setRandomMovie] = useState ([])
   const [planName, setPlanName]  = useState("");
   const [buttonText, setButtonText] = useState("Save Plan");
 
@@ -31,6 +33,12 @@ function RandomPlan() {
       setPlanName("")
     });
   };
+
+  useEffect(() => {
+    APIM.getPopularMovie().then((res) => {
+      console.log(res.data)
+    })
+  })
 
   useEffect(() => {
     API.getRandom().then((res) => {
