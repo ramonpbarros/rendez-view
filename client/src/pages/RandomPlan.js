@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import API from "../utils/API/Cocktail";
 import APIF from "../utils/API/Food";
 import APIP from "../utils/API/Plan";
+import APIU from "../utils/API"
 import RandomDrinkCard from "../components/RandomDrinkCard";
 import RandomMealCard from "../components/RandomMealCard";
 import RandomMovieCard from "../components/RandomMovieCard";
@@ -22,7 +23,7 @@ function RandomPlan() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    APIP.savePlan({
+    APIU.savePlan({
       name: planName,
       meal: randomMeal[0].m_name,
       cocktail: randomDrink[0].name
