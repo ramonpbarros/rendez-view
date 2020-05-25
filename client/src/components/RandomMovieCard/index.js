@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "../../utils/API/Movies"
+import { useParams } from "react-router-dom";
 
 function RandomMovieCard(props) {
+  const [trailer, setTrailer] = useState()
+
+  useEffect(() => {
+    API.getMovieTrailer(props.id).then((res) => {
+      // console.log(res.data.results[0].key);
+      setTrailer(`https://www.youtube.com/watch?v=${res.data.results[0].key}`)
+    });
+  }, []);
+
   return (
     <div className="col mb-4 mt-5">
       <div className="card h-100 border-dark">
@@ -8,16 +19,18 @@ function RandomMovieCard(props) {
           src={props.poster}
           className="card-img-top"
           alt="mealImg"
-          height="348"
+          
         />
         <div className="card-body">
           <h5 className="card-title">
             <strong>{props.title}</strong>
           </h5>
           <hr />
+          <p><strong>Plot:</strong></p>
           <p>
-            <strong>{props.plot}</strong>
+            {props.plot}
           </p>
+          <a href={trailer} target="_blank">View trailer</a>
         </div>
       </div>
     </div>

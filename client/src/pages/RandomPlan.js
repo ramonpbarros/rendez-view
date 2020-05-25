@@ -36,12 +36,11 @@ function RandomPlan() {
 
   useEffect(() => {
     APIM.getPopularMovie().then((res) => {
-      console.log(res.data.results[0]);
       setRandomMovie({
         id: res.data.results[randomNum].id,
-        title: res.data.results[randomNum].original_title,
+        title: res.data.results[randomNum].title,
         plot: res.data.results[randomNum].overview,
-        poster: res.data.results[randomNum].poster_path
+        poster: `http://image.tmdb.org/t/p/w185/${res.data.results[randomNum].poster_path}`
       });
     });
   }, []);
@@ -240,9 +239,10 @@ function RandomPlan() {
           })}
           <RandomMovieCard
             key={randomMovie.id}
+            id={randomMovie.id}
             title={randomMovie.title}
             plot={randomMovie.plot}
-            poster={` http://image.tmdb.org/t/p/w185/${randomMovie.poster}`}
+            poster={randomMovie.poster}
           />
         </div>
       </div>

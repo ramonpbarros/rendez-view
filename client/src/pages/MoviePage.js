@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ChosenMovie from "../components/ChosenMovie";
 import API from "../utils/API/Movies";
-
 import { useParams } from "react-router-dom";
+
 function MoviePage() {
   const { id } = useParams();
 
@@ -16,7 +16,7 @@ function MoviePage() {
   useEffect(() => {
     API.getOneMovie(id).then((res) => {
       setTitle(res.data.original_title);
-      setImage(` http://image.tmdb.org/t/p/w185/${res.data.poster_path}`);
+      setImage(`http://image.tmdb.org/t/p/w185/${res.data.poster_path}`);
       setPlot(res.data.overview);
       setTime(res.data.runtime);
       setDate(res.data.release_date);
