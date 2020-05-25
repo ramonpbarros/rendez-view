@@ -4,19 +4,23 @@ function RandomMovieCard(props) {
   return (
     <div className="col mb-4 mt-5">
       <div className="card h-100 border-dark">
-        <img
-          src="https://images.unsplash.com/photo-1485115905815-74a5c9fda2f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-          className="card-img-top"
-          alt="mealImg"
-          height="348"
-        />
+        <img src={props.image} className="card-img-top" alt="movieImg" height="348" />
         <div className="card-body">
           <h5 className="card-title">
-            <strong>Movies</strong>
+          <strong>{props.title}</strong>
           </h5>
           <hr />
-          <p>
-            <strong>Coming Soon!</strong>
+          <p className="card-text">
+            {props.measure1} {props.plot}
+          </p>
+          <p className="card-text">
+            {props.measure2} {props.time}
+          </p>
+          <p className="card-text">
+            {props.measure3} {props.date}
+          </p>
+          <p className="card-text">
+            {props.measure4} {props.link}
           </p>
         </div>
       </div>
