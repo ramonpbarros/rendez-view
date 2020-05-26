@@ -12,6 +12,7 @@ function MoviePage() {
   const [time, setTime] = useState();
   const [date, setDate] = useState();
   const [link, setLink] = useState();
+  const [movieId, setMovieId] = useState();
 
   useEffect(() => {
     API.getOneMovie(id).then((res) => {
@@ -20,6 +21,7 @@ function MoviePage() {
       setPlot(res.data.overview);
       setTime(res.data.runtime);
       setDate(res.data.release_date);
+      setDate(res.data.id);
       setLink(`https://www.imdb.com/title/${res.data.imdb_id}/`);
     });
   }, []);
@@ -31,6 +33,7 @@ function MoviePage() {
         image={image}
         time={time}
         date={date}
+        id={id}
         link={link}
       />
     );

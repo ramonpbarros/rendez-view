@@ -60,7 +60,9 @@ function ChosenMovie(props) {
               <p className="card-text">
                 <strong>Runtime: </strong> {props.time} minutes
               </p>
-
+              <p className="card-text">
+                <strong>Movie ID: </strong> {props.id} 
+              </p>
               <a href={props.link} target="_blank">
                 Go to IMDB page
               </a>

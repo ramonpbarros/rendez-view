@@ -13,7 +13,7 @@ const styles = {
     width: "100%",
     height: "65%",
     margin: "0,auto",
-    maxHeight: "200px",
+    maxHeight: "300px",
   },
   title: {
     fontSize: "142%",
