@@ -1,68 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rendez-View
 
-## Available Scripts
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/ramonpbarros/)
 
-In the project directory, you can run:
+Rendez-View is a webpage made for helping people plan a stay-at-home date, by providing a variety of cocktail, meal and movie choices.
 
-### `npm start`
+When out team was tasked with solving a common problem, we realize that in these quarantined times, it is difficult to plan a special night for your significant other, and that we could always use some help planning these special nights.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+That was where Rendez-View was born! Our webpage will help you make a blueprint for a truly special night. So that you'll never have to suffer through an underwhelming date, and will always wow that special someone.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![Rendez-View Landing Page](/images/landing-page.png)
 
-### `npm test`
+## Status
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Project is: _in progress_
 
-### `npm run build`
+- Check the application [here](https://rendez-view-app.herokuapp.com/).
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Repository can be found [here](https://github.com/ramonpbarros/rendez-view): Make sure to git clone and check out the code!
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![Rendez-View Plans](/images/my-plans.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+No downloads or installations required.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Simply visit our webpage.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create a login.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Navigate through our choices of Cocktails, Meals, and Movies.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Once you have made your choices you can save them to your plan.
 
-## Learn More
+Or if you still can't decide, you can also choose a random plan.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Once you have saved your plans, you can view them in your plans section.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### We configured this application to be completely mobile responsive
 
-### Code Splitting
+![Rendez-View Mobile](/images/mobile-response.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Features
 
-### Analyzing the Bundle Size
+<ul>
+<li>Completely Mobile Responsive</li>
+<li>User Authentication</li>
+<li>User able to name and save plans</li>
+<li>User can save a randomly generated plan</li>
+<li>A variety of APIs to provide choices</li>
+</ul>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![Rendez-View Random Plan Save](/images/Save-plan.png)
 
-### Making a Progressive Web App
+## Technologies
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Our team utilized a variety of libraries, frameworks and web APIs to give our product the best visual appeal and features that we could provide.
+In addition, to HTML, CSS,and Javascript we used:
 
-### Advanced Configuration
+<ul>
+<li>React</li>
+<li>Express</li>
+<li>Bootstrap CSS Framework</li>
+<li>thecocktail DB API</li>
+<li>themeal DB API</li>
+<li>themovie DB API</li>
+<li>Mongo DB with Mongoose</li>
+</ul>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Credits
 
-### Deployment
+Thanks to the following people who have contributed to this project:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### [Ramon Barros](https://github.com/ramonpbarros)
 
-### `npm run build` fails to minify
+### [Nicolas Ayala](https://github.com/ayalanick84)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### [Ruben Burrell](https://github.com/Gurren828)
+
+Feel free to contact us if you have any questions!
