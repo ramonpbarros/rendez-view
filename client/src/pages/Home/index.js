@@ -8,7 +8,8 @@ function Home() {
   const [planForm, setPlan] = useState({
     name: "",
     meal: "",
-    cocktail: ""
+    cocktail: "",
+    movie: ""
   });
 
   const changeText = (text) => {
@@ -32,7 +33,8 @@ function Home() {
         setPlan({
           name: "",
           meal: "",
-          cocktail: ""
+          cocktail: "",
+          movie: ""
         });
       })
       .catch((err) => console.log(err));
@@ -56,7 +58,7 @@ function Home() {
         <div className="col text-center mt-3">
           <Link
             to="/cocktailcategory"
-            className="btn btn-custom zoom btn-lg m-4"
+            className="btn btn-custom zoom btn-lg"
             href="#"
             role="button"
           >
@@ -64,11 +66,19 @@ function Home() {
           </Link>
           <Link
             to="/foodcategory"
-            className="btn btn-custom zoom btn-lg"
+            className="btn btn-custom zoom btn-lg m-4"
             href="#"
             role="button"
           >
             Search for Meals
+          </Link>
+          <Link
+            to="/moviecategory"
+            className="btn btn-custom zoom btn-lg"
+            href="#"
+            role="button"
+          >
+            Search for Movies
           </Link>
         </div>
         <hr className="my-4" />
@@ -83,6 +93,17 @@ function Home() {
                 value={planForm.name}
                 id="inputPlanName"
                 placeholder="Enter plan's name"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                className="form-control form-control-lg"
+                name="movie"
+                onChange={handleInputChange}
+                value={planForm.movie}
+                id="inputPlanName"
+                placeholder="Enter movie's id"
               />
             </div>
             <div className="form-group">
