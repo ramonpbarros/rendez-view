@@ -172,7 +172,7 @@ function TableRow(props) {
                         color="#f54c4c"
                         height={100}
                         width={100}
-                        timeout={9000} //3 secs
+                        timeout={9000} //9 secs
                       />
                     </div>
                   )}
@@ -185,7 +185,7 @@ function TableRow(props) {
                         color="#f54c4c"
                         height={100}
                         width={100}
-                        timeout={9000} //3 secs
+                        timeout={9000} //9 secs
                       />
                     </div>
                   )}
