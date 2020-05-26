@@ -11,7 +11,7 @@ const styles = {
   },
   img: {
     width: "100%",
-    height: "65%",
+    height: "270px",
     margin: "0,auto",
     maxHeight: "300px",
   },
