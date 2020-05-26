@@ -27,13 +27,11 @@ function Homepage() {
             Rendez-view
           </h1>
           <p className="lead">
-            This is a simple hero unit, a simple jumbotron-style component for
-            calling extra attention to featured content or information.
+            Discover and save favorite meals, cocktails and movies for better dates and family activities.
           </p>
           <hr className="my-4 mr-5" style={{ width: "55%" }} />
           <p>
-            It uses utility classes for typography and spacing to space content
-            out within the larger container.
+            log in to begin browsing our large selection.
           </p>
           <div className="col text-center mt-5">
             <Link
@@ -57,9 +55,7 @@ function Homepage() {
               <div className="card-body">
                 <h5 className="card-title text-center">Cocktails</h5>
                 <p className="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                  Explore our wide selection of drinks to discover your new favorite or to find recipes for new drinks to try.
                 </p>
               </div>
             </div>
@@ -72,9 +68,7 @@ function Homepage() {
               <div className="card-body">
                 <h5 className="card-title text-center">Meals</h5>
                 <p className="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                  Sample any of our delicious meals or search for your favorite to lear how to make it yourself.
                 </p>
               </div>
             </div>
@@ -87,8 +81,7 @@ function Homepage() {
               <div className="card-body">
                 <h5 className="card-title text-center">Movies</h5>
                 <p className="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content.
+                  be transported to new and familiar worlds with our incredable movie section to help hide the perfect movie for a date or to entertain the kids.
                 </p>
               </div>
             </div>

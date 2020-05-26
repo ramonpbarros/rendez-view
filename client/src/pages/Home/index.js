@@ -51,8 +51,7 @@ function Home() {
           Create Your Plan!
         </h1>
         <p className="lead">
-          This is a simple hero unit, a simple jumbotron-style component for
-          calling extra attention to featured content or information.
+          Use our wide selection to create your own custom plans.
         </p>
         <div className="col text-center mt-3">
           <Link

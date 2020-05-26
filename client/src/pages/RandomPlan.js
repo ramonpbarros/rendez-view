@@ -131,8 +131,7 @@ function RandomPlan() {
           Random Plan!
         </h1>
         <p className="lead">
-          This is a simple hero unit, a simple jumbotron-style component for
-          calling extra attention to featured content or information.
+          The meal, cocktail and movie have all been selected at random.
         </p>
         <hr className="my-4" />
         <div className="col text-center mt-5">
