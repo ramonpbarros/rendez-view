@@ -12,7 +12,8 @@ function UserPlans() {
           id: res._id,
           name: res.name,
           cocktail: res.cocktail,
-          meal: res.meal
+          meal: res.meal,
+          movie: res.movie
         }))
       );
     });
@@ -57,6 +58,7 @@ function UserPlans() {
                 name={item.name}
                 cocktail={item.cocktail}
                 meal={item.meal}
+                movie={item.movie}
                 />
               )
             })}
