@@ -31,7 +31,7 @@ function Homepage() {
           </p>
           <hr className="my-4 mr-5" style={{ width: "55%" }} />
           <p>
-            log in to begin browsing our large selection.
+            Sign up to begin browsing our large selection.
           </p>
           <div className="col text-center mt-5">
             <Link
@@ -81,7 +81,7 @@ function Homepage() {
               <div className="card-body">
                 <h5 className="card-title text-center">Movies</h5>
                 <p className="card-text">
-                  be transported to new and familiar worlds with our incredable movie section to help hide the perfect movie for a date or to entertain the kids.
+                  Be transported to new and familiar worlds with our incredible movie section to help you find the perfect movie for a date or to entertain the kids.
                 </p>
               </div>
             </div>
