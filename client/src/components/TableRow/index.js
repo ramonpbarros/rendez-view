@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import Loader from "react-loader-spinner";
 import API from "../../utils/API/Plan";
 import APIC from "../../utils/API/Cocktail";
-import APIM from "../../utils/API/Food";
+import APIF from "../../utils/API/Food";
+import APIM from "../../utils/API/Movies";
 
 function TableRow(props) {
   const [cocktail, setCocktail] = useState();
   const [meal, setMeal] = useState();
+  const [movie, setMovie] = useState();
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -17,6 +19,20 @@ function TableRow(props) {
       document.body.classList.remove("modal-open");
     };
   }, [showModal]);
+
+  useEffect(() => {
+    if (props.movie !== undefined) {
+      APIM.getOneMovie(props.movie).then((res) => {
+        setMovie({
+          id: res.data.id,
+          title: res.data.title,
+          plot: res.data.overview,
+          webpage: res.data.homepage,
+          poster: `http://image.tmdb.org/t/p/w185/${res.data.poster_path}`
+        });
+      });
+    }
+  }, []);
 
   function onClick() {
     fetchCocktail();
@@ -52,7 +68,7 @@ function TableRow(props) {
 
   function fetchMeal() {
     setShowModal(true);
-    APIM.getOneMeal(props.meal)
+    APIF.getOneMeal(props.meal)
       .then((res) => {
         const [meal] = res.data.meals;
         setMeal({
@@ -120,6 +136,9 @@ function TableRow(props) {
         <hr />
         <strong className="mr-2">Meal:</strong>
         {props.meal}
+        <hr />
+        <strong className="mr-2">Movie:</strong>
+        {movie && movie.title}
         <div className="mt-3 col text-center">
           <button
             type="button"
@@ -189,6 +208,19 @@ function TableRow(props) {
                       />
                     </div>
                   )}
+                  {movie ? (
+                    <ModalMovieDetails movie={movie} />
+                  ) : (
+                    <div className="col text-center">
+                      <Loader
+                        type="Rings"
+                        color="#f54c4c"
+                        height={100}
+                        width={100}
+                        timeout={9000} //9 secs
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="modal-footer">
                   <button
@@ -211,6 +243,23 @@ function TableRow(props) {
   );
 }
 
+function ModalMovieDetails(props) {
+  const { movie } = props;
+  return (
+    <div style={{ zIndex: 3 }}>
+      <hr />
+      <img src={movie.poster} alt="movieImg" style={{ width: "100%" }} />
+      <hr />
+      <h3>{movie.title}</h3>
+      <hr />
+      <p>
+        <strong>Plot:</strong>
+      </p>
+      <p>{movie.plot}</p>
+      {movie.webpage && <a href={movie.webpage} target="_blank">More info</a>}
+    </div>
+  );
+}
 function ModalCocktailDetails(props) {
   const { cocktail } = props;
   return (
