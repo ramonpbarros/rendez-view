@@ -132,7 +132,7 @@ function RandomPlan() {
           Random Plan!
         </h1>
         <p className="lead">
-          The meal, cocktail and movie have all been selected at random.
+          The meal, cocktail and movie have all been selected randomly.
         </p>
         <hr className="my-4" />
         <div className="col text-center mt-5">

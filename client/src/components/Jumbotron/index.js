@@ -11,14 +11,14 @@ function Jumbotron(props) {
         className="display-4"
         style={{ color: "#f54c4c", fontWeight: "bold" }}
       >
-        Hello, {props.username}!
+        Hello, {props.username}
       </h1>
       <p className="lead">
         Welcome to Rendez-View!
       </p>
       <hr className="my-4" />
       <p>
-        If the following is not your email please log out and log in again {props.email}.
+        If the following is not your email please log out and log in again. ({props.email})
       </p>
       <div className="col text-center mt-5">
         <Link
