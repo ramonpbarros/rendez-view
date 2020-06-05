@@ -9,7 +9,6 @@ router.get("/moviecategory", (req, res) => {
     )
     .then((response) => {
       return res.json(response.data);
-      // console.log(response.data);
     })
     .catch((error) => {
       if (error.response) {
@@ -74,10 +73,26 @@ router.get("/popularmovie", (req, res) => {
 });
 
 router.get("/movietrailer/:id", (req, res) => {
-  console.log(req.params.id);
   axios
     .get(
       `https://api.themoviedb.org/3/movie/${req.params.id}/videos?api_key=97607772fc281d59cc4416a0db38656c&language=en-US`
+    )
+    .then((response) => {
+      return res.json(response.data);
+    })
+    .catch((error) => {
+      if (error.response) {
+        res.sendStatus(error.response.statusText);
+      } else {
+        res.sendStatus(500);
+      }
+    });
+});
+
+router.get("/movie/:id", (req, res) => {
+  axios
+    .get(
+      `https://api.themoviedb.org/3/search/movie?api_key=97607772fc281d59cc4416a0db38656c&language=en-US&query=${req.params.id}&page=1&include_adult=false`
     )
     .then((response) => {
       return res.json(response.data);

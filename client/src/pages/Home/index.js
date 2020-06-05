@@ -103,7 +103,7 @@ function Home() {
                 onChange={handleInputChange}
                 value={planForm.movie}
                 id="inputPlanName"
-                placeholder="Enter movie's id"
+                placeholder="Enter movie's name"
               />
             </div>
             <div className="form-group">

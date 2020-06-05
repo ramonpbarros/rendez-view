@@ -73,6 +73,9 @@ function RandomMealCard(props) {
             max={500}
             readMoreText="Read More"
           />
+          <div className="col text-center">
+          <a href={props.youtube} target="_blank" className="btn btn-custom mt-3">Video</a>
+          </div>
         </div>
       </div>
     </div>

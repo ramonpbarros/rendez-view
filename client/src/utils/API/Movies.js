@@ -18,4 +18,7 @@ export default {
   getMovieTrailer: function (id) {
     return axios.get("api/movietrailer/" + id);
   },
+  getMovie: function(id) {
+    return axios.get("api/movie/" + id);
+  }
 };
