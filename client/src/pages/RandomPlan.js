@@ -72,11 +72,13 @@ function RandomPlan() {
 
   useEffect(() => {
     APIF.getRandom().then((res) => {
+      console.log(res.data.meals)
       setRandomMeal(
         res.data.meals.map((res) => ({
           m_id: res.idMeal,
           m_name: res.strMeal,
           m_image: res.strMealThumb,
+          m_youtube: res.strYoutube,
           m_instruction: res.strInstructions,
           m_ingredient1: res.strIngredient1,
           m_ingredient2: res.strIngredient2,
@@ -200,6 +202,7 @@ function RandomPlan() {
                 key={item.m_id}
                 name={item.m_name}
                 image={item.m_image}
+                youtube={item.m_youtube}
                 instruction={item.m_instruction}
                 ingredient1={item.m_ingredient1}
                 ingredient2={item.m_ingredient2}

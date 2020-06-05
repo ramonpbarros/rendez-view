@@ -5,16 +5,6 @@ function RandomMovieCard(props) {
   const [trailer, setTrailer] = useState();
   const [showModal, setShowModal] = useState(false);
 
-  // useEffect(() => {
-  //   if (props.id !== undefined) {
-  //     API.getMovieTrailer(props.id).then((res) => {
-  //       setTrailer(
-  //         `https://www.youtube.com/watch?v=${res.data.results[0].key}`
-  //       );
-  //     });
-  //   }
-  // }, []);
-
   useEffect(() => {
     if (showModal) {
       document.body.classList.add("modal-open");
