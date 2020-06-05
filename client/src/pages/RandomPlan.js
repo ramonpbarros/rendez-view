@@ -28,7 +28,7 @@ function RandomPlan() {
       name: planName,
       meal: randomMeal[0].m_name,
       cocktail: randomDrink[0].name,
-      movie: randomMovie.id
+      movie: randomMovie.title
     }).then((res) => {
       setPlanName("");
     });
