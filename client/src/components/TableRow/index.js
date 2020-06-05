@@ -22,13 +22,14 @@ function TableRow(props) {
 
   useEffect(() => {
     if (props.movie !== undefined) {
-      APIM.getOneMovie(props.movie).then((res) => {
+      APIM.getMovie(props.movie).then((res) => {
+        console.log(res.data.results[0])
         setMovie({
-          id: res.data.id,
-          title: res.data.title,
-          plot: res.data.overview,
-          webpage: res.data.homepage,
-          poster: `http://image.tmdb.org/t/p/w185/${res.data.poster_path}`
+          id: res.data.results[0].id,
+          title: res.data.results[0].title,
+          plot: res.data.results[0].overview,
+          webpage: res.data.results[0].homepage,
+          poster: `http://image.tmdb.org/t/p/w185/${res.data.results[0].poster_path}`
         });
       });
     }
@@ -138,7 +139,7 @@ function TableRow(props) {
         {props.meal}
         <hr />
         <strong className="mr-2">Movie:</strong>
-        {movie && movie.title}
+        {props.movie}
         <div className="mt-3 col text-center">
           <button
             type="button"
