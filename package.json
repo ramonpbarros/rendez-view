@@ -27,7 +27,7 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bcrypt-nodejs": "0.0.3",
     "bootstrap": "^4.5.0",
     "concurrently": "^5.2.0",
